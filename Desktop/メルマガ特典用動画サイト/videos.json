@@ -1,0 +1,59 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "title": "Canva AIでクイズアプリ作成",
+      "url": "https://youtu.be/Dt_mCnCteu0",
+      "description": "「クイズアプリ作って」ってお願いしたら、本当にできちゃった！しかもあっという間に。「え、こんなに簡単なの？」ってきっと驚きますよ。プログラミング知識ゼロでも、素敵なアプリができちゃう魔法をお見せします✨",
+      "category": "Canva AI",
+      "difficulty": 1,
+      "duration": "15分",
+      "thumbnail": "images/canva-quiz-thumb.jpg",
+      "icon": "🎨"
+    },
+    {
+      "id": 2,
+      "title": "Canva AIでスライド作成",
+      "url": "https://youtu.be/uE10y73aPIU",
+      "description": "「おしゃれなスライド作って」って伝えただけで、こんなに素敵なスライドができちゃうなんて！デザインセンスなんてなくても、みんなが「すごい！」って驚くようなスライドが、あっという間に完成しちゃうのを体験してみてください🎉",
+      "category": "Canva AI",
+      "difficulty": 1,
+      "duration": "12分",
+      "thumbnail": "images/canva-slide-thumb.jpg",
+      "icon": "📊"
+    },
+    {
+      "id": 3,
+      "title": "Google AI Studioで診断アプリ作成",
+      "url": "https://youtu.be/qjP0K1u0egE",
+      "description": "「性格診断アプリ作って」ってお願いしたら、まさか本当にできちゃうなんて！しかもちゃんと質問に答えてくれて、結果も表示してくれる✨いや、これを作るのに何時間かかると思ってたから、こんなに簡単なのは強烈なインパクトでした😲",
+      "category": "Google AI Studio",
+      "difficulty": 3,
+      "duration": "25分",
+      "thumbnail": "images/google-ai-thumb.jpg",
+      "icon": "🔬"
+    },
+    {
+      "id": 4,
+      "title": "ClaudeCodeでLP作成（ローカル環境で実装）",
+      "url": "https://youtu.be/YWKNURIcymw",
+      "description": "「おしゃれなLP作って」ってお願いしたら、その場であっという間にできちゃった！HTMLもCSSも知らないのに、こんなに素敵なサイトができるなんて、まさに魔法みたいですよね✨本当にプロが作ったみたいな仕上がりになります。",
+      "category": "ClaudeCode",
+      "difficulty": 2,
+      "duration": "18分",
+      "thumbnail": "images/claude-lp-local-thumb.jpg",
+      "icon": "🤖"
+    },
+    {
+      "id": 5,
+      "title": "ClaudeCodeでLP作成（デプロイ）",
+      "url": "https://youtu.be/cHUK4Rtk4EY",
+      "description": "作ったサイトをみんなに見てもらうために、インターネットに公開しちゃいましょう！「え、これも簡単なの？」ってきっと驚きますよ。自分で作ったサイトがインターネット上で実際に見られるって、なんだかワクワクしちゃいますよね😆",
+      "category": "ClaudeCode",
+      "difficulty": 4,
+      "duration": "35分",
+      "thumbnail": "images/claude-lp-deploy-thumb.jpg",
+      "icon": "🚀"
+    }
+  ]
+}

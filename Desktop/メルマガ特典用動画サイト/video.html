@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画詳細 - VibeCoding解説動画</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="video-detail.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">← 動画一覧に戻る</a>
+            </nav>
+            <h1 id="video-title">読み込み中...</h1>
+            <p class="subtitle" id="video-category"></p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="video-content">
+            <div class="video-player" id="video-player">
+                <!-- Loom動画の埋め込みプレーヤー -->
+            </div>
+            
+            <div class="video-info">
+                <h2 id="video-description-title">動画について</h2>
+                <p id="video-description" class="description-text"></p>
+                
+                <div class="video-meta">
+                    <span class="meta-item">
+                        <strong>カテゴリ:</strong> <span id="video-meta-category"></span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-videos">
+            <h3>その他の動画</h3>
+            <div class="related-grid" id="related-grid">
+                <!-- 関連動画はJavaScriptで動的に生成 -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Kon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="video-detail.js"></script>
+</body>
+</html>
