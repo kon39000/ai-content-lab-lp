@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+    background: #f0f2f5;
+    overflow: hidden;
+}
+
+.presentation {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: white;
+    overflow: hidden;
+}
+
+.slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-content {
+    width: 90%;
+    max-width: 1000px;
+    padding: 60px;
+    text-align: center;
+}
+
+/* タイトルスライド */
+#slide-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+#slide-1 h1 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+#slide-1 .subtitle {
+    font-size: 1.5em;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.emoji-icon {
+    font-size: 5em;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* 通常のスライド */
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #667eea;
+    border-radius: 2px;
+}
+
+/* コンテンツラッパー */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.content-wrapper .icon {
+    font-size: 4em;
+}
+
+.content-wrapper ul {
+    text-align: left;
+    font-size: 1.3em;
+    line-height: 1.8;
+}
+
+.content-wrapper li {
+    margin-bottom: 15px;
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+.content-wrapper li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+}
+
+/* ハイライトボックス */
+.highlight-box {
+    background: #f8f9ff;
+    border: 2px solid #667eea;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.highlight-box p {
+    font-size: 1.2em;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ベネフィットカード */
+.benefits {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background: #f8f9ff;
+    border-radius: 20px;
+    padding: 40px 30px;
+    flex: 1;
+    transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.benefit-card .emoji {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.5em;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* チェックリスト */
+.checklist {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f8f9ff;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.checklist-item:hover {
+    background: #eef0ff;
+    transform: translateX(10px);
+}
+
+.checklist-item .check {
+    font-size: 2em;
+    color: #4CAF50;
+}
+
+.checklist-item h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.checklist-item p {
+    color: #666;
+}
+
+/* フロー */
+.flow {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.flow-step {
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #667eea;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.flow-step h3 {
+    font-size: 1.3em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.flow-step p {
+    color: #666;
+}
+
+.flow-arrow {
+    text-align: center;
+    font-size: 2em;
+    color: #667eea;
+    margin: 10px 0;
+}
+
+/* 例示ボックス */
+.example-box {
+    background: #f8f9ff;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px 0;
+}
+
+.example-box h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.chat-example {
+    text-align: left;
+}
+
+.user-message, .claude-message {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.user-icon, .claude-icon {
+    font-size: 2em;
+    min-width: 40px;
+}
+
+.user-message p {
+    background: #e3f2fd;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 1.1em;
+}
+
+.claude-message p {
+    background: #f3e5f5;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 1.1em;
+}
+
+.tip {
+    font-size: 1.2em;
+    color: #667eea;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* ヒントグリッド */
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.tip-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    transition: all 0.3s;
+}
+
+.tip-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.1);
+}
+
+.tip-card h3 {
+    color: #667eea;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.tip-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* FAQ */
+.faq {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: white;
+    border-left: 4px solid #667eea;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.faq-item h3 {
+    color: #667eea;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* まとめ */
+.summary {
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.summary-point {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.summary-point .number {
+    background: #667eea;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.summary-point p {
+    font-size: 1.3em;
+    color: #333;
+}
+
+.cta {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.cta h3 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+/* ナビゲーション */
+.navigation {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.nav-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+.slide-indicator {
+    font-size: 1.1em;
+    color: #666;
+    font-weight: bold;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 2.5em !important;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .benefits {
+        flex-direction: column;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .navigation {
+        bottom: 20px;
+        padding: 10px 20px;
+        gap: 20px;
+    }
+
+    .nav-btn {
+        padding: 10px 20px;
+    }
+}
