@@ -1,0 +1,12 @@
+{
+  "name": "gemini-cli-master",
+  "version": "1.0.0",
+  "description": "Gemini CLI Master - AIプログラミングを極める完全ガイド",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "serve": "npx http-server -p 8000"
+  },
+  "keywords": ["gemini", "cli", "tutorial", "ai", "programming"],
+  "author": "kon39000",
+  "license": "MIT"
+}

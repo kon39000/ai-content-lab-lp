@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini CLI 導入ガイド</title>
+    <meta name="description" content="Gemini CLIの導入方法を動画と記事でわかりやすく解説。Node.jsのインストールから初期設定まで完全サポート。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Gemini CLI 導入ガイド</span>
+                </h1>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link">ホーム</a></li>
+                        <li><a href="#getting-started" class="nav-link">導入動画</a></li>
+                        <li><a href="#course" class="nav-link">実践講座</a></li>
+                    </ul>
+                </nav>
+                <button class="menu-toggle" aria-label="メニュー">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        Gemini CLIを<br>
+                        <span class="highlight">はじめよう</span>
+                    </h2>
+                    <p class="hero-description">
+                        Node.jsのインストールからGemini CLIの導入まで、動画でわかりやすく解説
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#getting-started" class="btn btn-primary">導入動画を見る</a>
+                        <a href="#course" class="btn btn-secondary">60分実践講座</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学習ステップ -->
+        <section class="learning-paths">
+            <div class="container">
+                <h2 class="section-title">3ステップで始める</h2>
+                <div class="paths-grid">
+                    <div class="path-card">
+                        <div class="path-icon">📦</div>
+                        <h3>STEP 1</h3>
+                        <p>Node.jsをインストール</p>
+                        <ul class="path-topics">
+                            <li>公式サイトからダウンロード</li>
+                            <li>インストール手順</li>
+                            <li>動作確認</li>
+                        </ul>
+                    </div>
+                    <div class="path-card">
+                        <div class="path-icon">🤖</div>
+                        <h3>STEP 2</h3>
+                        <p>Gemini CLIを導入</p>
+                        <ul class="path-topics">
+                            <li>npmでインストール</li>
+                            <li>API設定</li>
+                            <li>初期設定</li>
+                        </ul>
+                    </div>
+                    <div class="path-card">
+                        <div class="path-icon">💡</div>
+                        <h3>STEP 3</h3>
+                        <p>基本的な使い方を理解</p>
+                        <ul class="path-topics">
+                            <li>Gemini CLIとは？</li>
+                            <li>主な機能</li>
+                            <li>活用例</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 導入動画 -->
+        <section id="getting-started" class="getting-started">
+            <div class="container">
+                <h2 class="section-title">導入動画で学ぶ</h2>
+                <div class="video-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="video-player" data-video="nodejs-install">
+                                <div class="placeholder">
+                                    <span class="play-icon">▶</span>
+                                    <p>Node.jsインストール方法</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Node.jsのインストール</h3>
+                        <p>Gemini CLIを使用するために必要なNode.jsのインストール方法を解説します。</p>
+                        <div class="video-actions">
+                            <a href="https://youtu.be/LpL5AN_7MvI" target="_blank" class="youtube-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14c-1.88-.5-9.38-.5-9.38-.5s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14c.5-1.88.5-5.81.5-5.81s0-3.93-.5-5.81zM9.54 15.57V8.43L15.82 12l-6.28 3.57z"/>
+                                </svg>
+                                YouTubeで視聴
+                            </a>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="video-player" data-video="gemini-cli-install">
+                                <div class="placeholder">
+                                    <span class="play-icon">▶</span>
+                                    <p>Gemini CLI導入方法</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Gemini CLIの導入</h3>
+                        <p>Gemini CLIのインストールから初期設定まで、ステップバイステップで解説します。</p>
+                        <div class="video-actions">
+                            <a href="https://youtu.be/kLuYJhk2UEo" target="_blank" class="youtube-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14c-1.88-.5-9.38-.5-9.38-.5s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14c.5-1.88.5-5.81.5-5.81s0-3.93-.5-5.81zM9.54 15.57V8.43L15.82 12l-6.28 3.57z"/>
+                                </svg>
+                                YouTubeで視聴
+                            </a>
+                            <a href="https://note.com/kon39000/n/ne6aba449e454" target="_blank" class="article-link">📝 詳細記事</a>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="video-player" data-video="what-is-gemini">
+                                <div class="placeholder">
+                                    <span class="play-icon">▶</span>
+                                    <p>Gemini CLIとは</p>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Gemini CLIとは？</h3>
+                        <p>Gemini CLIの概要と特徴、できることを分かりやすく解説します。</p>
+                        <div class="video-actions">
+                            <a href="https://youtu.be/IOfkzkHsSHw" target="_blank" class="youtube-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14c-1.88-.5-9.38-.5-9.38-.5s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14c.5-1.88.5-5.81.5-5.81s0-3.93-.5-5.81zM9.54 15.57V8.43L15.82 12l-6.28 3.57z"/>
+                                </svg>
+                                YouTubeで視聴
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実践講座 -->
+        <section id="course" class="course">
+            <div class="container">
+                <h2 class="section-title">60分実践講座</h2>
+                <div class="course-content">
+                    <div class="course-video">
+                        <iframe 
+                            width="100%" 
+                            height="450" 
+                            src="https://www.youtube.com/embed/IxM4zd1I-8o" 
+                            title="Gemini CLI 60分実践講座"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="course-info">
+                        <h3>導入後は実践で学ぼう</h3>
+                        <p>導入が完了したら、この60分の実践講座で実際にGemini CLIを使ったプロジェクトを作成してみましょう。</p>
+                        <ul class="course-topics">
+                            <li>✅ 実際のプロジェクト作成</li>
+                            <li>✅ 基本コマンドの使い方</li>
+                            <li>✅ 実践的な活用方法</li>
+                            <li>✅ 成果物の完成</li>
+                        </ul>
+                        <a href="https://youtu.be/IxM4zd1I-8o" target="_blank" class="btn btn-primary">YouTubeで視聴</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025年AIコンテンツラボ</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
