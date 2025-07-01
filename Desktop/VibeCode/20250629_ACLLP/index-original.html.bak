@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIコンテンツラボ｜期間限定メンバー募集</title>
+    <meta name="description" content="たった3分、スキマ時間で"できた！"が積み上がる。子育て・仕事に追われても AI × VibeCoding があなたの毎日を変える。">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Bubbles -->
+    <div class="floating-bubble bubble-1">
+        <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_228afbfb-7901-47dc-a012-86db461ee7fd_1.png" alt="">
+    </div>
+    <div class="floating-bubble bubble-2">
+        <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_228afbfb-7901-47dc-a012-86db461ee7fd_2.png" alt="">
+    </div>
+    <div class="floating-bubble bubble-3">
+        <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_cfb02c7a-8ab1-4bc6-ad1f-306a897fc70c_0.png" alt="">
+    </div>
+    <div class="floating-bubble bubble-4">
+        <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_cfb02c7a-8ab1-4bc6-ad1f-306a897fc70c_2.png" alt="">
+    </div>
+    <div class="floating-bubble bubble-5">
+        <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_fb28d707-7224-48d9-ab47-97470190f1d7_0.png" alt="">
+    </div>
+    <div class="floating-bubble bubble-6">
+        <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_fb28d707-7224-48d9-ab47-97470190f1d7_1.png" alt="">
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>たった3分、スキマ時間で<br><span class="highlight">"できた！"</span>が積み上がる</h1>
+                    <p class="subtext">子育て・仕事に追われても<br>AI × VibeCoding があなたの毎日を変える</p>
+                </div>
+                <div class="hero-character">
+                    <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_228afbfb-7901-47dc-a012-86db461ee7fd_0.png" alt="AIコンテンツラボ公式キャラクター" class="character-image">
+                </div>
+            </div>
+            
+            <div class="pricing-info">
+                <p>AIコンテンツラボ（月額2,980円）<br>
+                <span class="countdown-text">7/1 募集開始｜動画・資料はすべてアーカイブ見放題</span></p>
+            </div>
+            
+            <div class="countdown-timer" id="countdown">
+                <div class="time-unit">
+                    <span id="days">00</span>
+                    <label>日</label>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">00</span>
+                    <label>時間</label>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">00</span>
+                    <label>分</label>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds">00</span>
+                    <label>秒</label>
+                </div>
+            </div>
+            
+            <a href="https://nmo1.com/p/r/jLJHIDSC" class="cta-button primary">今すぐ申し込む</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problems">
+        <div class="container">
+            <h2>こんなモヤモヤありませんか？</h2>
+            <div class="problems-grid">
+                <div class="problem-item">
+                    <div class="problem-icon">❓</div>
+                    <p>AIツールが多すぎて何から手を付ければいいかわからない</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">⏰</div>
+                    <p>セミナーを受けても時間がなくて実践できない</p>
+                </div>
+                <div class="problem-item">
+                    <div class="problem-icon">😞</div>
+                    <p>成果を見せる相手がいなくて続かない</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="features-bg-image"></div>
+        <div class="container">
+            <h2>AIコンテンツラボが選ばれる３つの理由</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>週１・60分AI活用セミナー</h3>
+                    <p>曜日不定、録画を永久保存。仕事・家事の合間に視聴OK</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💬</div>
+                    <h3>月１・会員限定ボイスチャット</h3>
+                    <p>講師＆メンバーで"深ぼり質問タイム"──疑問をその場で解消</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎨</div>
+                    <h3>チャレンジ＆イベント</h3>
+                    <p>7月：Discordスタンプコンペ／7月末〜AIアートコンテスト…"試して発表"を後押し</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process">
+        <div class="container">
+            <h2>伴走サイクル図</h2>
+            <p class="process-subtitle">学ぶ▶深ぼる▶作る▶見せる──4ステップが1か月で一巡</p>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>学ぶ</h4>
+                    <p>セミナー</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>深ぼる</h4>
+                    <p>ボイスチャット</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>作る</h4>
+                    <p>チャレンジ</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>見せる</h4>
+                    <p>成果物シェア</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits">
+        <div class="container">
+            <h2>ラボで得られるもの</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">📚</div>
+                    <h3>AI図書館</h3>
+                    <p>全セミナー動画・スライド・資料を永久見放題、いつでも立ち寄れるオンライン図書館</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💡</div>
+                    <h3>フィードバックが届く</h3>
+                    <p>Discordで成果物を投稿するとメンターや仲間からコメントや改善案がもらえる</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Udemy新作クーポン</h3>
+                    <p>運営メンバー制作のUdemy講座が公開された際、期間＆枚数限定で無料クーポンをプレゼント</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- July Events Section -->
+    <section id="july-events">
+        <div class="container">
+            <h2>7月の目玉企画</h2>
+            <div class="events-grid">
+                <div class="event-item">
+                    <div class="event-icon">🎯</div>
+                    <h3>コミュニティDiscordスタンプコンペ</h3>
+                    <p>全員参加OK／投票制</p>
+                </div>
+                <div class="event-item">
+                    <div class="event-icon">🏆</div>
+                    <h3>AIアートコンテスト</h3>
+                    <p>7月末エントリー開始──賞品は次回セミナー共演権</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2>料金プラン</h2>
+            <div class="pricing-card">
+                <div class="price">
+                    <span class="currency">月額</span>
+                    <span class="amount">2,980</span>
+                    <span class="currency">円（税込）</span>
+                </div>
+                <p class="price-note">※価格は今後変更の可能性があります</p>
+                <ul class="features-list">
+                    <li>週１セミナー・月１ボイスチャット・チャレンジ参加権</li>
+                    <li>アーカイブ動画＆資料 永久閲覧権</li>
+                    <li>Discordコミュニティ参加</li>
+                </ul>
+                <a href="https://nmo1.com/p/r/jLJHIDSC" class="cta-button secondary">今すぐ申し込む</a>
+            </div>
+            
+            <!-- 5大特典 -->
+            <div class="bonuses">
+                <h3>今回のみの入会特典</h3>
+                <div class="bonus-grid">
+                    <div class="bonus-item">
+                        <h4>15分タスクジェネレーター</h4>
+                        <p>スキマ時間でできるAI活用タスクを自動生成。忙しい日でも確実に前進できます。</p>
+                    </div>
+                    <div class="bonus-item">
+                        <h4>100円noteネタ出しマシーン</h4>
+                        <p>売れるnote記事のネタとタイトルを瞬時に提案。収益化のヒントが詰まったツールです。</p>
+                    </div>
+                    <div class="bonus-item">
+                        <h4>AI迷子診断テスト</h4>
+                        <p>あなたのAI活用レベルと課題を診断。最適な学習ルートを見つけられます。</p>
+                    </div>
+                    <div class="bonus-item">
+                        <h4>AIツール診断</h4>
+                        <p>目的別におすすめのAIツールを提案。無駄な投資を避けて効率的にスキルアップ。</p>
+                    </div>
+                    <div class="bonus-item">
+                        <h4>Gemini CLI 導入ガイド</h4>
+                        <p>コマンドラインでGeminiを使う最新手法。上級者向けの効率的なAI活用法を習得。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <h2>よくある質問</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>Q. 忙しくてセミナーに出られない週があります。</h4>
+                    <p>A. 録画と資料を"AI図書館"でいつでも視聴できます。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q. AI初心者でも入れますか？</h4>
+                    <p>A. 基礎講座のアーカイブから段階的に学べます。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Q. 退会はすぐ出来ますか？</h4>
+                    <p>A. 次回決済日前ならマイページでワンクリック退会。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message">
+        <div class="container">
+            <h2>運営者 Tomo K. からひと言</h2>
+            <div class="message-content">
+                <div class="message-profile">
+                    <img src="プロフィール.jpg" alt="運営者 Tomo K." class="profile-image">
+                </div>
+                <div class="message-text">
+                    <p>「完璧より"公開してみる"――まずは小さく、でも確実に前進する仲間を歓迎します。」</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="final-cta">
+        <div class="container">
+            <h2>期間限定募集</h2>
+            <p>2025年7月1日〜7月7日 23:59まで</p>
+            <a href="https://nmo1.com/p/r/jLJHIDSC" class="cta-button primary large">今すぐ申し込む</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 VibeCoding. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
