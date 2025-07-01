@@ -13,8 +13,44 @@ function initCountdown() {
             const endDistance = endDate - now;
             
             if (endDistance > 0) {
-                // 募集期間中
-                document.getElementById('countdown').innerHTML = '<div class="countdown-message">募集中！</div>';
+                // 募集期間中 - 募集終了までのカウントダウンを表示
+                const endDays = Math.floor(endDistance / (1000 * 60 * 60 * 24));
+                const endHours = Math.floor((endDistance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const endMinutes = Math.floor((endDistance % (1000 * 60 * 60)) / (1000 * 60));
+                const endSeconds = Math.floor((endDistance % (1000 * 60)) / 1000);
+                
+                let countdownText = '募集終了まで あと';
+                if (endDays > 0) {
+                    countdownText += ` ${endDays}日`;
+                }
+                if (endHours > 0 || endDays > 0) {
+                    countdownText += ` ${endHours}時間`;
+                }
+                countdownText += ` ${endMinutes}分 ${endSeconds}秒`;
+                
+                document.getElementById('countdown').innerHTML = `
+                    <div class="countdown-end-timer">
+                        <div class="countdown-label">${countdownText}</div>
+                        <div class="countdown-units">
+                            <div class="time-unit">
+                                <span>${String(endDays).padStart(2, '0')}</span>
+                                <label>日</label>
+                            </div>
+                            <div class="time-unit">
+                                <span>${String(endHours).padStart(2, '0')}</span>
+                                <label>時間</label>
+                            </div>
+                            <div class="time-unit">
+                                <span>${String(endMinutes).padStart(2, '0')}</span>
+                                <label>分</label>
+                            </div>
+                            <div class="time-unit">
+                                <span>${String(endSeconds).padStart(2, '0')}</span>
+                                <label>秒</label>
+                            </div>
+                        </div>
+                    </div>
+                `;
             } else {
                 // 募集終了
                 document.getElementById('countdown').innerHTML = '<div class="countdown-message">募集終了</div>';

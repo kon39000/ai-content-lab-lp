@@ -303,6 +303,39 @@ body {
     font-weight: 500;
 }
 
+/* Countdown End Timer */
+.countdown-end-timer {
+    text-align: center;
+}
+
+.countdown-label {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: pulse-text 2s ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.countdown-units {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.countdown-message {
+    font-size: 3em;
+    font-weight: 900;
+    text-align: center;
+    color: #ff6b6b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* CTA Buttons */
 .cta-button {
     display: inline-block;
