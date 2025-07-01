@@ -1,0 +1,11 @@
+{
+  "name": "ai-content-lab-lp",
+  "version": "1.0.0",
+  "description": "AIコンテンツラボのランディングページ",
+  "scripts": {
+    "generate-ogp": "node generate-ogp.js"
+  },
+  "devDependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}

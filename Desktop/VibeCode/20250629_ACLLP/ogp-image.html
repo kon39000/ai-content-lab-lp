@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGP Image Generator</title>
+    <style>
+        .ogp-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        
+        .content-left {
+            flex: 1;
+            color: white;
+            z-index: 2;
+        }
+        
+        .ogp-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .ogp-subtitle {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+        
+        .ogp-price {
+            font-size: 2.2rem;
+            font-weight: 600;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .character-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            z-index: 2;
+        }
+        
+        .character-main {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 6px solid rgba(255,255,255,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+        
+        .floating-chars {
+            position: absolute;
+        }
+        
+        .floating-chars img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+        }
+        
+        .char-1 { top: 20px; right: 20px; }
+        .char-2 { bottom: 20px; left: 20px; }
+        .char-3 { top: 50%; right: -20px; }
+        
+        .bg-decoration {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .deco-1 {
+            width: 200px;
+            height: 200px;
+            top: -100px;
+            right: -100px;
+        }
+        
+        .deco-2 {
+            width: 150px;
+            height: 150px;
+            bottom: -75px;
+            left: -75px;
+        }
+        
+        .highlight {
+            color: #ffd700;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <div class="ogp-container">
+        <div class="bg-decoration deco-1"></div>
+        <div class="bg-decoration deco-2"></div>
+        
+        <div class="content-left">
+            <h1 class="ogp-title">
+                毎日コツコツ、<br>
+                <span class="highlight">一緒に歩む</span><br>
+                AIコンテンツラボ
+            </h1>
+            <p class="ogp-subtitle">月額制AI学習コミュニティ</p>
+            <div class="ogp-price">月額2,980円</div>
+        </div>
+        
+        <div class="character-container">
+            <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_228afbfb-7901-47dc-a012-86db461ee7fd_0.png" 
+                 alt="robokon" class="character-main">
+            
+            <div class="floating-chars char-1">
+                <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_228afbfb-7901-47dc-a012-86db461ee7fd_1.png" alt="robokon">
+            </div>
+            <div class="floating-chars char-2">
+                <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_cfb02c7a-8ab1-4bc6-ad1f-306a897fc70c_0.png" alt="robokon">
+            </div>
+            <div class="floating-chars char-3">
+                <img src="robokon/kon39000__--ar_11_--raw_--profile_v7ezn8w_tr35m65_--stylize_7_fb28d707-7224-48d9-ab47-97470190f1d7_0.png" alt="robokon">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
