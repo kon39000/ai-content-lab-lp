@@ -28,13 +28,13 @@ body {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    z-index: -1;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    z-index: 1;
     pointer-events: none;
     overflow: hidden;
-    opacity: 0.3;
+    opacity: 0.6;
 }
 
 .floating-bubble::before {
@@ -58,7 +58,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0.4;
+    opacity: 0.7;
 }
 
 .bubble-1 {
@@ -172,7 +172,7 @@ body {
     gap: 60px;
     margin-bottom: 50px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .hero-text {
@@ -256,7 +256,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .countdown-text {
@@ -272,7 +272,7 @@ body {
     gap: 25px;
     margin-bottom: 50px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .time-unit {
@@ -317,7 +317,7 @@ body {
     box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
     position: relative;
     overflow: hidden;
-    z-index: 2;
+    z-index: 10;
 }
 
 .cta-button::before {
@@ -358,6 +358,7 @@ body {
 section {
     padding: 100px 0;
     position: relative;
+    z-index: 5;
 }
 
 section:nth-child(even) {
@@ -458,7 +459,7 @@ h2::after {
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 50px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .feature-item {
@@ -531,7 +532,7 @@ h2::after {
     opacity: 0.95;
     font-weight: 500;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .process-flow {
@@ -541,7 +542,7 @@ h2::after {
     gap: 30px;
     flex-wrap: wrap;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .process-step {
@@ -870,7 +871,7 @@ h2::after {
     gap: 60px;
     text-align: center;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .message-profile {
@@ -927,7 +928,7 @@ h2::after {
     color: white;
     margin-bottom: 25px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 #final-cta h2::after {
@@ -938,7 +939,7 @@ h2::after {
     font-size: 1.3em;
     margin-bottom: 50px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
     font-weight: 500;
 }
 
