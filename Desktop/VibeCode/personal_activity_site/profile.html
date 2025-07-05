@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロフィール - Kon's Portfolio</title>
+    <meta name="description" content="AIとバイブコーディングの専門家 Konのプロフィール">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #10b981 100%);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, #e5e7eb 0%, #e5e7eb 100%);
+            width: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- ヘッダー（index.htmlと同じ） -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold gradient-bg bg-clip-text text-transparent">Kon's Portfolio</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">ホーム</a>
+                    <a href="profile.html" class="text-blue-600 font-medium">プロフィール</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 transition">サービス</a>
+                    <a href="media.html" class="text-gray-700 hover:text-blue-600 transition">メディア</a>
+                    <a href="seminar.html" class="text-gray-700 hover:text-blue-600 transition">セミナー</a>
+                    <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">お問い合わせ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- プロフィールヒーロー -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-bold mb-4">プロフィール</h1>
+            <p class="text-xl opacity-90">AIとバイブコーディングで新しい価値を創造する専門家</p>
+        </div>
+    </section>
+
+    <!-- 基本情報 -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="md:flex items-start gap-8">
+                    <div class="md:w-1/3 mb-6 md:mb-0">
+                        <img src="https://via.placeholder.com/300x300" alt="プロフィール写真" class="rounded-lg w-full">
+                    </div>
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl font-bold mb-4">Kon</h2>
+                        <p class="text-xl text-gray-600 mb-6">
+                            AIエンジニア / バイブコーディング講師 / コンテンツクリエイター
+                        </p>
+                        <div class="space-y-4">
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">専門分野</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">AI開発</span>
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">バイブコーディング</span>
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">教育コンテンツ</span>
+                                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">ビジネス自動化</span>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg mb-2">保有スキル</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm">Python</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm">JavaScript</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm">ChatGPT API</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm">Claude API</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm">Next.js</span>
+                                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded text-sm">React</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 実績数値 -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">実績</h2>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">5,000+</div>
+                    <p class="text-gray-600">受講者数</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="text-4xl font-bold text-green-600 mb-2">200+</div>
+                    <p class="text-gray-600">執筆記事数</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="text-4xl font-bold text-orange-600 mb-2">50+</div>
+                    <p class="text-gray-600">セミナー登壇</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <div class="text-4xl font-bold text-purple-600 mb-2">100+</div>
+                    <p class="text-gray-600">企業支援実績</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 経歴 -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">経歴</h2>
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 timeline-line"></div>
+                <div class="space-y-8">
+                    <div class="relative flex items-start">
+                        <div class="absolute left-8 w-4 h-4 bg-blue-600 rounded-full -translate-x-1/2"></div>
+                        <div class="ml-20">
+                            <div class="text-sm text-gray-500 mb-1">2024年〜現在</div>
+                            <h3 class="text-lg font-semibold mb-2">AIコンテンツラボ 設立</h3>
+                            <p class="text-gray-600">法人向けAI活用支援コミュニティを立ち上げ、多くの企業のDX推進を支援</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start">
+                        <div class="absolute left-8 w-4 h-4 bg-green-600 rounded-full -translate-x-1/2"></div>
+                        <div class="ml-20">
+                            <div class="text-sm text-gray-500 mb-1">2023年</div>
+                            <h3 class="text-lg font-semibold mb-2">バイブコーディング概念を提唱</h3>
+                            <p class="text-gray-600">AIとプログラミングを融合させた新しい開発手法を体系化</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start">
+                        <div class="absolute left-8 w-4 h-4 bg-orange-600 rounded-full -translate-x-1/2"></div>
+                        <div class="ml-20">
+                            <div class="text-sm text-gray-500 mb-1">2022年</div>
+                            <h3 class="text-lg font-semibold mb-2">Udemy講師として活動開始</h3>
+                            <p class="text-gray-600">プログラミング・AI関連の講座を多数公開、高評価を獲得</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 理念・ビジョン -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">理念・ビジョン</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-semibold mb-4 gradient-bg bg-clip-text text-transparent">バイブコーディングとは</h3>
+                <p class="text-gray-700 mb-6 leading-relaxed">
+                    バイブコーディングは、AIの力を最大限に活用しながら、人間の創造性と直感を組み合わせた新しいプログラミング手法です。
+                    従来の開発手法に比べて、より効率的で、より創造的な成果を生み出すことができます。
+                </p>
+                <h3 class="text-2xl font-semibold mb-4 gradient-bg bg-clip-text text-transparent">提供する価値</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>最新のAI技術を実践的に活用できるスキルの習得支援</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>ビジネスの効率化と自動化を実現するソリューション提供</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span>個人と組織の成長を加速させる教育プログラムの開発</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">一緒に新しい価値を創造しませんか？</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                AIとバイブコーディングの力で、あなたのビジネスを次のレベルへ
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="services.html" class="gradient-bg text-white px-8 py-3 rounded-full font-medium hover:opacity-90 transition">
+                    サービスを見る
+                </a>
+                <a href="contact.html" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-medium hover:bg-blue-50 transition">
+                    お問い合わせ
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター（index.htmlと同じ） -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center text-gray-400">
+                <p>&copy; 2025 Kon's Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

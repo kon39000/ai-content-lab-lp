@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIコンテンツラボ 入会者向けロードマップ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #10b981 100%);
+        }
+        .phase-card {
+            transition: all 0.3s ease;
+        }
+        .phase-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .step-line {
+            background: linear-gradient(to right, #e5e7eb 0%, #10b981 100%);
+            height: 2px;
+        }
+        .milestone-badge {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .progress-bar {
+            background: linear-gradient(to right, #10b981, #059669);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- ヘッダー -->
+    <header class="gradient-bg text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">AIコンテンツラボ</h1>
+            <p class="text-xl md:text-2xl mb-2">入会者向けロードマップ</p>
+            <p class="text-lg opacity-90">3ヶ月で AI初心者 → 収益化まで</p>
+        </div>
+    </header>
+
+    <!-- 全体概要 -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">🎯 3ヶ月プログラム全体像</h2>
+                <p class="text-lg text-gray-600">段階的にスキルアップし、最終的に自分のコンテンツで収益化</p>
+            </div>
+            
+            <!-- 進捗バー -->
+            <div class="mb-12">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-sm font-medium text-gray-700">進捗状況</span>
+                    <span class="text-sm font-medium text-gray-700">0%</span>
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div class="progress-bar h-3 rounded-full" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- フェーズ概要 -->
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Phase 1 -->
+                <div class="phase-card bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+                        <h3 class="ml-3 text-lg font-semibold">AI初体験</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">1-2週目</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• ChatGPT基本操作</li>
+                        <li>• 画像生成AI体験</li>
+                        <li>• 課題発見ワーク</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="phase-card bg-white rounded-lg shadow-md p-6 border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+                        <h3 class="ml-3 text-lg font-semibold">コンテンツ作成</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">3-6週目</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• ブログ記事作成</li>
+                        <li>• SNS投稿チャレンジ</li>
+                        <li>• 100円note公開</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="phase-card bg-white rounded-lg shadow-md p-6 border-l-4 border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+                        <h3 class="ml-3 text-lg font-semibold">収益化準備</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">7-10週目</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• 量産体制確立</li>
+                        <li>• 複数プラットフォーム</li>
+                        <li>• 月収1000円達成</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="phase-card bg-white rounded-lg shadow-md p-6 border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm">4</div>
+                        <h3 class="ml-3 text-lg font-semibold">バイブコーディング</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">11-12週目</p>
+                    <ul class="text-sm space-y-1 text-gray-600">
+                        <li>• プログラミング入門</li>
+                        <li>• 簡単なツール作成</li>
+                        <li>• オリジナルツール開発</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 詳細ロードマップ -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">📊 詳細ロードマップ</h2>
+            
+            <!-- タイムライン -->
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                
+                <!-- Week 1-2: AI初体験 -->
+                <div class="relative mb-12">
+                    <div class="absolute left-6 w-4 h-4 bg-blue-500 rounded-full"></div>
+                    <div class="ml-16">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Week 1-2</span>
+                                <h3 class="ml-3 text-xl font-semibold">🚀 AI初体験</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 1: AIツールを触ってみる</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ ChatGPT基本操作</li>
+                                        <li>✅ 画像生成AI体験</li>
+                                        <li>✅ その他AIツール探索</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 2: 課題発見</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ 現状分析ワーク</li>
+                                        <li>✅ AI活用アイデア出し</li>
+                                        <li>✅ 実現可能性検証</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3-6: コンテンツ作成 -->
+                <div class="relative mb-12">
+                    <div class="absolute left-6 w-4 h-4 bg-green-500 rounded-full"></div>
+                    <div class="ml-16">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Week 3-6</span>
+                                <h3 class="ml-3 text-xl font-semibold">📝 コンテンツ作成</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 3-4: 初めてのAIコンテンツ</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ ブログ記事作成（1000文字）</li>
+                                        <li>✅ SNS投稿作成</li>
+                                        <li>✅ 1週間毎日投稿チャレンジ</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 5-6: 100円note公開</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ noteコンテンツ企画</li>
+                                        <li>✅ 3000文字の有料記事作成</li>
+                                        <li>✅ 読者フィードバック収集</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 7-10: 収益化準備 -->
+                <div class="relative mb-12">
+                    <div class="absolute left-6 w-4 h-4 bg-orange-500 rounded-full"></div>
+                    <div class="ml-16">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">Week 7-10</span>
+                                <h3 class="ml-3 text-xl font-semibold">💰 収益化準備</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 7-8: 量産体制確立</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ 効率的な制作フロー確立</li>
+                                        <li>✅ 週3本ペースでコンテンツ作成</li>
+                                        <li>✅ 複数プラットフォーム展開</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 9-10: マネタイズ本格化</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ 有料コンテンツ強化</li>
+                                        <li>✅ 月収1000円達成</li>
+                                        <li>✅ 成功事例として発信</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 11-12: バイブコーディング -->
+                <div class="relative mb-12">
+                    <div class="absolute left-6 w-4 h-4 bg-purple-500 rounded-full"></div>
+                    <div class="ml-16">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Week 11-12</span>
+                                <h3 class="ml-3 text-xl font-semibold">🔧 バイブコーディング</h3>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 11: 入門</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ バイブコーディング基礎理解</li>
+                                        <li>✅ 環境準備</li>
+                                        <li>✅ 簡単なツール作成</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-2">Week 12: 実践プロジェクト</h4>
+                                    <ul class="text-sm text-gray-600 space-y-1">
+                                        <li>✅ オリジナルツール企画</li>
+                                        <li>✅ AIと一緒に開発</li>
+                                        <li>✅ 完成・公開</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- マイルストーン -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">🏆 マイルストーン & 特典</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 初心者達成 -->
+                <div class="text-center">
+                    <div class="milestone-badge w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🌱</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">初心者達成</h3>
+                    <p class="text-gray-600 mb-4">0-4週目の目標達成</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• ChatGPT基本操作マスター</li>
+                        <li>• 初ブログ記事公開</li>
+                        <li>• 課題発見完了</li>
+                    </ul>
+                </div>
+
+                <!-- 中級者達成 -->
+                <div class="text-center">
+                    <div class="milestone-badge w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🌿</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">中級者達成</h3>
+                    <p class="text-gray-600 mb-4">5-8週目の目標達成</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• 100円note公開</li>
+                        <li>• 読者10人獲得</li>
+                        <li>• 月間PV100達成</li>
+                    </ul>
+                </div>
+
+                <!-- 上級者達成 -->
+                <div class="text-center">
+                    <div class="milestone-badge w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-3xl">🌳</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">上級者達成</h3>
+                    <p class="text-gray-600 mb-4">9-12週目の目標達成</p>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• 月収1000円達成</li>
+                        <li>• オリジナルツール完成</li>
+                        <li>• 次の計画立案</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功のコツ -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">💡 成功のコツ</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">小さく始める</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 text-left">
+                        <li>• 完璧を求めない</li>
+                        <li>• まず公開することが大事</li>
+                        <li>• フィードバックで改善</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🤝</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">仲間と共有</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 text-left">
+                        <li>• Discordで進捗報告</li>
+                        <li>• 困ったら即相談</li>
+                        <li>• 成功も失敗もシェア</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-3">習慣化する</h3>
+                    <ul class="text-sm text-gray-600 space-y-1 text-left">
+                        <li>• 毎日15分のAI学習</li>
+                        <li>• 週1の成果物作成</li>
+                        <li>• 月1の振り返り</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">今すぐ始めよう！</h2>
+            <p class="text-xl mb-8 opacity-90">
+                AIの力を活用して、3ヶ月で収益化を実現しませんか？
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition">
+                    今すぐ入会する
+                </a>
+                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-blue-600 transition">
+                    詳細を見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 AIコンテンツラボ. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
