@@ -5,18 +5,6 @@
     {
       "source": "/",
       "destination": "/AIコンテンツラボ_202507ローンチ/revised_roadmap_50k_visual.html"
-    },
-    {
-      "source": "/roadmap",
-      "destination": "/AIコンテンツラボ_202507ローンチ/revised_roadmap_50k_visual.html"
-    },
-    {
-      "source": "/portfolio",
-      "destination": "/personal_activity_site/index.html"
-    },
-    {
-      "source": "/profile",
-      "destination": "/personal_activity_site/profile.html"
     }
   ]
 }
