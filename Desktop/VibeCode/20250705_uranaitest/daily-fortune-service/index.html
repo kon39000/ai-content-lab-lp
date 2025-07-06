@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Fortune - あなただけの毎日の占い</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 登録画面 -->
+        <div id="registration-screen" class="screen">
+            <header class="hero-section">
+                <div class="hero-content">
+                    <h1 class="main-title">✨ Daily Fortune ✨</h1>
+                    <p class="hero-subtitle">あなただけの毎日の占いメッセージ</p>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">🌟</span>
+                            <span>パーソナライズされた占い</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">📅</span>
+                            <span>毎日新しいメッセージ</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🎯</span>
+                            <span>あなたの星座に基づく分析</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="registration-form">
+                <h2>🌸 まずは簡単登録 🌸</h2>
+                <form id="user-registration" class="form-container">
+                    <div class="input-group">
+                        <label for="nickname">ニックネーム</label>
+                        <input type="text" id="nickname" name="nickname" required 
+                               placeholder="例：さくら" maxlength="20">
+                        <small>お好きなニックネームを入力してください</small>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="birthdate">生年月日</label>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                        <small>より正確な占いのために必要です</small>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" required>
+                            <span class="checkmark"></span>
+                            <span class="terms-text">
+                                <a href="#" onclick="showTerms()">利用規約</a>と
+                                <a href="#" onclick="showPrivacy()">プライバシーポリシー</a>に同意します
+                            </span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="cta-button">
+                        <span>✨ 占いを始める ✨</span>
+                    </button>
+                </form>
+            </section>
+
+            <section class="pricing-preview">
+                <h3>🎁 料金プラン</h3>
+                <div class="pricing-cards">
+                    <div class="pricing-card free">
+                        <h4>無料プラン</h4>
+                        <div class="price">¥0<span>/月</span></div>
+                        <ul>
+                            <li>✅ 基本的な占いメッセージ</li>
+                            <li>✅ 週3回のメッセージ</li>
+                            <li>❌ 詳細な分析</li>
+                            <li>❌ 特別なアドバイス</li>
+                        </ul>
+                        <button class="plan-button" onclick="selectPlan('free')">無料で始める</button>
+                    </div>
+                    
+                    <div class="pricing-card premium">
+                        <div class="popular-badge">人気</div>
+                        <h4>プレミアム</h4>
+                        <div class="price">¥980<span>/月</span></div>
+                        <ul>
+                            <li>✅ 毎日の占いメッセージ</li>
+                            <li>✅ 詳細な星座分析</li>
+                            <li>✅ 恋愛・仕事・健康のアドバイス</li>
+                            <li>✅ 月運勢レポート</li>
+                        </ul>
+                        <button class="plan-button premium-btn" onclick="selectPlan('premium')">プレミアム登録</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- メイン画面 -->
+        <div id="main-screen" class="screen" style="display: none;">
+            <header class="main-header">
+                <div class="user-info">
+                    <span class="greeting" id="user-greeting">こんにちは！</span>
+                    <span class="zodiac-info" id="user-zodiac"></span>
+                </div>
+                <div class="header-actions">
+                    <button onclick="showSettings()" class="settings-btn">⚙️</button>
+                    <button onclick="logout()" class="logout-btn">ログアウト</button>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <section class="daily-fortune">
+                    <div class="date-display">
+                        <h2 id="today-date"></h2>
+                        <p class="day-counter" id="day-counter"></p>
+                    </div>
+                    
+                    <div class="fortune-card" id="fortune-card">
+                        <div class="fortune-header">
+                            <h3 id="fortune-title">今日の運勢</h3>
+                            <div class="fortune-rating" id="fortune-rating">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        
+                        <div class="fortune-content">
+                            <div class="main-message" id="main-message">
+                                メッセージを読み込み中...
+                            </div>
+                            
+                            <div class="fortune-details" id="fortune-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">💕 恋愛運</span>
+                                    <span class="detail-content" id="love-fortune">読み込み中...</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">💼 仕事運</span>
+                                    <span class="detail-content" id="work-fortune">読み込み中...</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">💚 健康運</span>
+                                    <span class="detail-content" id="health-fortune">読み込み中...</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">💰 金運</span>
+                                    <span class="detail-content" id="money-fortune">読み込み中...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="lucky-items">
+                                <h4>🍀 今日のラッキーアイテム</h4>
+                                <div class="lucky-item" id="lucky-item">読み込み中...</div>
+                                <div class="lucky-color">
+                                    <span>ラッキーカラー: </span>
+                                    <span id="lucky-color" class="color-indicator">読み込み中...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button onclick="shareFortune()" class="share-btn">
+                            📱 シェアする
+                        </button>
+                        <button onclick="showHistory()" class="history-btn">
+                            📚 過去の占い
+                        </button>
+                    </div>
+                </section>
+
+                <section class="subscription-status" id="subscription-status">
+                    <div class="status-card">
+                        <h3>📊 利用状況</h3>
+                        <div class="status-info">
+                            <span id="plan-status">無料プラン</span>
+                            <span id="usage-count">今月の利用回数: 0/12</span>
+                        </div>
+                        <div class="upgrade-prompt" id="upgrade-prompt">
+                            <p>プレミアムプランで毎日の占いを楽しみませんか？</p>
+                            <button onclick="showPricing()" class="upgrade-btn">
+                                ✨ プレミアムにアップグレード ✨
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- 設定画面 -->
+        <div id="settings-screen" class="screen" style="display: none;">
+            <header class="settings-header">
+                <button onclick="backToMain()" class="back-btn">← 戻る</button>
+                <h2>⚙️ 設定</h2>
+            </header>
+            
+            <div class="settings-content">
+                <div class="settings-section">
+                    <h3>プロフィール設定</h3>
+                    <div class="setting-item">
+                        <label>ニックネーム</label>
+                        <input type="text" id="settings-nickname" placeholder="新しいニックネーム">
+                    </div>
+                    <div class="setting-item">
+                        <label>生年月日</label>
+                        <input type="date" id="settings-birthdate">
+                    </div>
+                    <button onclick="updateProfile()" class="save-btn">保存</button>
+                </div>
+                
+                <div class="settings-section">
+                    <h3>通知設定</h3>
+                    <div class="setting-item">
+                        <label class="switch">
+                            <input type="checkbox" id="daily-notifications">
+                            <span class="slider"></span>
+                        </label>
+                        <span>毎日の占い通知</span>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h3>プラン管理</h3>
+                    <div class="current-plan" id="current-plan">
+                        <span>現在のプラン: 無料プラン</span>
+                    </div>
+                    <button onclick="showPricing()" class="upgrade-btn">
+                        プランを変更
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

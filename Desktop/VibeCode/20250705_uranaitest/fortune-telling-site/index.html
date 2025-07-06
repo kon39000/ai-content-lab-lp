@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>占い鑑定書 - こん様へ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 占い鑑定書 🌟</h1>
+            <p class="subtitle">～ あなたの運命を紐解く ～</p>
+        </header>
+
+        <main>
+            <section class="client-info">
+                <h2>🌸 ご相談者様情報 🌸</h2>
+                <div class="info-card">
+                    <p><strong>お名前：</strong>こん様</p>
+                    <p><strong>現在の状況：</strong>アラフォー主婦、フリーランスとして在宅勤務</p>
+                    <p><strong>ご相談内容：</strong>AIを活用して月20万円稼ぎたいが、なかなかうまくいかない</p>
+                </div>
+            </section>
+
+            <section class="zodiac-analysis">
+                <h2>⭐ 星座分析 ⭐</h2>
+                <div class="analysis-card">
+                    <div class="zodiac-input">
+                        <label for="birthdate">生年月日を入力してください：</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                        <button onclick="analyzeZodiac()">星座を判定</button>
+                    </div>
+                    <div id="zodiac-result" class="zodiac-result"></div>
+                </div>
+            </section>
+
+            <section class="tarot-reading">
+                <h2>🃏 タロットカード鑑定 🃏</h2>
+                <div class="tarot-cards">
+                    <div class="card-section">
+                        <h3>📖 過去 - The Hermit（隠者）</h3>
+                        <div class="card-content">
+                            <p>こん様の過去には、内なる探求の時期が見えています。あなたは長い間、自分自身と向き合い、本当に大切なものを見つけるための旅路を歩んでこられました。</p>
+                            <p>子育てと仕事の両立という大きな挑戦の中で、時には孤独を感じながらも、自分の内なる声に耳を傾け続けてきた強さがあります。この経験こそが、今のあなたの深い洞察力と判断力の源となっているのです。</p>
+                            <p>過去の困難や迷いは、決して無駄ではありません。それらはすべて、今のあなたをより賢明で思慮深い人格へと導いてくれた貴重な学びなのです。</p>
+                        </div>
+                    </div>
+
+                    <div class="card-section">
+                        <h3>🌟 現在 - The Star（星）</h3>
+                        <div class="card-content">
+                            <p>現在のあなたは、希望の光を見つけ始めています。AIという新しい技術への関心は、まさに未来への扉を開く鍵となるでしょう。</p>
+                            <p>星のカードは、癒しと再生の時期を表しています。今まで積み重ねてきた経験と新しい学びが融合し、あなたの中で新たな可能性が芽生えつつあります。月20万円という目標に向かって歩むあなたの姿勢は、決して間違っていません。</p>
+                            <p>ただし、星の光は一夜にして現れるものではありません。継続的な努力と学習、そして自分自身への信頼が重要です。今は焦らず、着実に基盤を固める時期です。</p>
+                        </div>
+                    </div>
+
+                    <div class="card-section">
+                        <h3>🚀 未来 - The Sun（太陽）</h3>
+                        <div class="card-content">
+                            <p>未来には明るい太陽が輝いています！太陽のカードは成功、達成、そして心からの喜びを表す最も吉兆なカードの一つです。</p>
+                            <p>こん様の努力は必ず実を結びます。AIを活用したお仕事での成功は、想像以上の成果をもたらすでしょう。月20万円という目標は通過点に過ぎず、さらなる可能性が広がっています。</p>
+                            <p>家族との時間も大切にしながら、自分らしい働き方を確立できる未来が見えています。あなたの経験と知識を活かし、他の人々にも希望を与える存在になるでしょう。</p>
+                            <p>太陽の光は、あなたの内なる才能を照らし、新しい道筋を明確に示してくれます。自信を持って前進してください。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="advice">
+                <h2>💎 鑑定士からのアドバイス 💎</h2>
+                <div class="advice-card">
+                    <h3>📝 行動指針</h3>
+                    <ul>
+                        <li><strong>学習の継続：</strong>AIスキルの向上は一歩一歩。毎日少しずつでも学び続けることが大切です。</li>
+                        <li><strong>ネットワーク構築：</strong>同じ志を持つ仲間との繋がりを大切にしましょう。</li>
+                        <li><strong>小さな成功を積み重ねる：</strong>大きな目標に向かって、達成可能な小さな目標を設定しましょう。</li>
+                        <li><strong>家族との時間：</strong>仕事と家庭のバランスを保つことで、より良い成果が生まれます。</li>
+                    </ul>
+                    
+                    <h3>🌈 今後の展望</h3>
+                    <p>こん様の星回りは、今後6か月間で大きな変化を示しています。特に新しい技術への取り組みが、予想以上の結果をもたらすでしょう。</p>
+                    <p>あなたの持つ主婦としての視点と、フリーランスとしての経験は、AIビジネスの世界で大きな武器となります。この独自の強みを活かし、自分らしい成功の道を歩んでください。</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>🌙 この鑑定書があなたの人生に光をもたらしますように 🌙</p>
+                <p class="date">鑑定日: <span id="today-date"></span></p>
+                <p class="fortune-teller">占い師: 星見 美月</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
