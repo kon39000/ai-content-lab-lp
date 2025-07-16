@@ -38,26 +38,23 @@ function doPost(e) {
     // 予約番号を生成
     const reservationId = generateReservationId();
     
-    // データを追加
+    // 現在の日時
+    const timestamp = new Date().toLocaleString('ja-JP');
+    
+    // データを追加（シンプル版）
     sheet.appendRow([
       reservationId,
-      data.timestamp,
+      timestamp,
       data.name,
-      data.phone,
+      data.email,
       data.showtime,
-      data.generalTickets,
-      data.studentTickets,
-      data.infantTickets || 0,
-      data.groupSize || 1,
-      data.attendees ? data.attendees.join('、') : '',
-      data.totalAmount,
-      data.status,
-      '', // 入金確認日（空欄）
-      '', // 備考（空欄）
+      data.tickets,
+      '予約完了',
+      '', // 備考
     ]);
     
-    // 確認メールを送信（メールアドレスがない場合は管理者のみに送信）
-    sendConfirmationEmail(data, reservationId);
+    // 確認メールを送信
+    sendSimpleConfirmationEmail(data, reservationId);
     
     // 成功レスポンス
     return ContentService
@@ -87,47 +84,74 @@ function generateReservationId() {
   return `KO${year}${month}${day}-${random}`;
 }
 
-function sendConfirmationEmail(data, reservationId) {
-  const subject = `【金田塾OMET】仮予約受付完了（予約番号：${reservationId}）`;
+function sendSimpleConfirmationEmail(data, reservationId) {
+  const subject = `【金田塾OMET】予約完了（予約番号：${reservationId}）`;
   
   const body = `
 ${data.name} 様
 
 この度は、金田塾・OMET合同発表会「いろ・いろ・いろいろ語り」に
-ご予約いただきまして、誠にありがとうございます。
-
-以下の内容で仮予約を承りました。
+ご予約いただきまして、誠にありがとうございます！
 
 【予約内容】
 予約番号：${reservationId}
-代表者名：${data.name}
-電話番号：${data.phone}
+お名前：${data.name}
+メールアドレス：${data.email}
 希望日時：${data.showtime}
-一般：${data.generalTickets}枚
-小中学生：${data.studentTickets}枚
-幼児（座席必要）：${data.infantTickets || 0}枚
-参加総人数：${data.groupSize || 1}名
-${data.attendees && data.attendees.length > 0 ? `同行者：${data.attendees.join('、')}` : ''}
-合計金額：¥${data.totalAmount.toLocaleString()}
+チケット枚数：${data.tickets}枚
 
-${BANK_INFO}
+【お支払いについて】
+当日会場にて現金でお支払いください。
+一般：2,000円
+小中学生：1,000円
+幼児（座席必要）：500円
+幼児（座席不要）：無料
 
-ご入金確認後、予約確定のご連絡をさせていただきます。
+【会場情報】
+としま区民センター 6F 小ホール
+JR他各線「池袋駅」(東口)より徒歩7分
+※開場は開演30分前からです
 
-ご不明な点がございましたら、下記までお問い合わせください。
+何かご不明な点がございましたら、お気軽にお問い合わせください。
 電話：090-3315-9222
 メール：${ADMIN_EMAIL}
 
-何卒よろしくお願いいたします。
+当日お会いできることを楽しみにしております！
 
 金田塾・OMET
 `;
   
+  try {
+    // お客様にメール送信
+    MailApp.sendEmail({
+      to: data.email,
+      subject: subject,
+      body: body
+    });
+  } catch (error) {
+    console.error('お客様へのメール送信エラー:', error);
+  }
+  
   // 管理者に通知
+  const adminSubject = `【新規予約】${data.name}様 (${reservationId})`;
+  const adminBody = `
+新しい予約が入りました。
+
+予約番号：${reservationId}
+お名前：${data.name}
+メールアドレス：${data.email}
+希望日時：${data.showtime}
+チケット枚数：${data.tickets}枚
+予約日時：${new Date().toLocaleString('ja-JP')}
+
+スプレッドシートで詳細を確認してください。
+${BANK_INFO}
+`;
+  
   MailApp.sendEmail({
     to: ADMIN_EMAIL,
-    subject: subject,
-    body: body
+    subject: adminSubject,
+    body: adminBody
   });
 }
 
@@ -229,21 +253,15 @@ function initializeSpreadsheet() {
       sheet = spreadsheet.insertSheet('予約リスト');
     }
     
-    // ヘッダー行を設定
+    // ヘッダー行を設定（シンプル版）
     const headers = [
       '予約番号',
-      '申込日時', 
-      '申込者名',
-      '電話番号',
+      '予約日時', 
+      'お名前',
+      'メールアドレス',
       '希望日時',
-      '一般チケット',
-      '学生チケット', 
-      '幼児チケット',
-      '参加総人数',
-      '同行者',
-      '合計金額',
+      'チケット枚数',
       'ステータス',
-      '入金確認日',
       '備考'
     ];
     

@@ -256,6 +256,96 @@
             line-height: 1.8;
         }
 
+        .simple-form {
+            max-width: 400px;
+            margin: 0 auto 30px;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .reservation-btn-simple {
+            width: 100%;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .reservation-btn-simple:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .reservation-btn-simple:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading-message,
+        .success-message,
+        .error-message {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .loading-message {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
         .reservation-buttons {
             display: flex;
             flex-direction: column;
@@ -452,29 +542,74 @@
         </div>
 
         <div class="reservation-container">
-            <h2 class="reservation-title">チケット予約</h2>
+            <h2 class="reservation-title">🎭 チケット予約</h2>
             <div class="reservation-description">
-                <p>チケットのご予約は、下記のGoogleフォームまたはお電話にて承っております。</p>
-                <p>フォームからご予約いただくと、振込先情報をお送りいたします。</p>
+                <p><strong>当日払いOK！キャンセル無料！</strong></p>
+                <p>お名前とメールアドレスだけでカンタン予約♪</p>
             </div>
             
-            <div class="reservation-buttons">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1XRFB2BxyEKv_wO1g03MhSjTjmtMbkc5nBT_PJNP9ld7NmQ/viewform?usp=dialog" target="_blank" class="reservation-btn">
-                    📝 Googleフォームで予約する
-                </a>
-                <a href="tel:090-3315-9222" class="reservation-btn tel-btn">
-                    📞 電話で予約する<br>
-                    <small>090-3315-9222</small>
-                </a>
+            <form id="simpleReservationForm" class="simple-form">
+                <div class="form-group">
+                    <label for="name">お名前 <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="山田太郎">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="showtime">希望日時 <span class="required">*</span></label>
+                    <select id="showtime" name="showtime" required>
+                        <option value="">選択してください</option>
+                        <option value="8月1日(金) 18:00〜">8月1日(金) 18:00〜</option>
+                        <option value="8月2日(土) 13:00〜">8月2日(土) 13:00〜</option>
+                        <option value="8月2日(土) 15:30〜">8月2日(土) 15:30〜</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tickets">チケット枚数 <span class="required">*</span></label>
+                    <select id="tickets" name="tickets" required>
+                        <option value="">選択してください</option>
+                        <option value="1">1枚</option>
+                        <option value="2">2枚</option>
+                        <option value="3">3枚</option>
+                        <option value="4">4枚</option>
+                        <option value="5">5枚</option>
+                        <option value="6">6枚</option>
+                        <option value="7">7枚</option>
+                        <option value="8">8枚</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="reservation-btn-simple" id="submitBtn">
+                    🎟️ 今すぐ予約する！
+                </button>
+            </form>
+
+            <div class="loading-message" id="loading" style="display: none;">
+                <p>📤 予約を送信中...</p>
+            </div>
+
+            <div class="success-message" id="successMessage" style="display: none;">
+                <h3>🎉 予約完了！</h3>
+                <p>ありがとうございます！予約を受け付けました。</p>
+                <p><strong>お支払いは当日会場でOKです！</strong></p>
+                <p>詳細はメールでお送りいたします。</p>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;">
+                <h3>❌ エラーが発生しました</h3>
+                <p>申し訳ございません。下記までお電話ください。</p>
+                <p><strong>📞 090-3315-9222</strong></p>
             </div>
 
             <div class="payment-info">
                 <h4>💰 お支払いについて</h4>
-                <ul>
-                    <li>銀行振込（事前）</li>
-                    <li>当日現金払い</li>
-                </ul>
-                <p style="margin-top: 10px; font-size: 0.9em;">※振込先は予約確認後にご案内いたします</p>
+                <p><strong>当日現金払いでOKです！</strong></p>
+                <p style="font-size: 0.9em; margin-top: 10px;">事前振込をご希望の方は予約後にご案内いたします</p>
             </div>
 
             <div class="contact-info">
@@ -554,6 +689,68 @@
                 });
             }
         }
+
+        // シンプル予約フォームの送信処理
+        document.getElementById('simpleReservationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // UIを更新
+            submitBtn.disabled = true;
+            loading.style.display = 'block';
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // フォームデータを取得
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                showtime: document.getElementById('showtime').value,
+                tickets: document.getElementById('tickets').value
+            };
+            
+            try {
+                // Google Apps Scriptに送信
+                const response = await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.status === 'success') {
+                    // 成功メッセージを表示
+                    loading.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    
+                    // フォームをリセット
+                    this.reset();
+                    
+                    // 座席状況を更新
+                    updateSeatStatus();
+                    
+                    // 成功メッセージまでスクロール
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    throw new Error(result.message || '予約の送信に失敗しました');
+                }
+                
+            } catch (error) {
+                console.error('予約送信エラー:', error);
+                loading.style.display = 'none';
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth' });
+            } finally {
+                submitBtn.disabled = false;
+            }
+        });
         
         // ページ読み込み時に座席状況を更新
         updateSeatStatus();
