@@ -1,0 +1,10 @@
+{
+  "buildCommand": "echo 'No build required'",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/AIコンテンツラボ_202507ローンチ/revised_roadmap_50k_visual.html"
+    }
+  ]
+}

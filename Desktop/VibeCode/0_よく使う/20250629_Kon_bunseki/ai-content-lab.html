@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIコンテンツラボ | 元保育士と一緒に学ぶAI活用コミュニティ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .twitter-embed {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .member-highlight {
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+        }
+        .cta-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- ヘッダー -->
+    <header class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold mb-6">AIコンテンツラボ</h1>
+            <p class="text-2xl mb-4">元保育士と一緒に学ぶAI活用コミュニティ</p>
+            <p class="text-xl mb-8 opacity-90">プログラミング経験ゼロから月5万円の副収入へ</p>
+            
+            <div class="bg-white bg-opacity-20 p-6 rounded-lg max-w-2xl mx-auto mb-8">
+                <h2 class="text-2xl font-bold mb-4">🎉 現在25名が活動中</h2>
+                <p class="text-lg">温かい仲間と一緒に、AI活用スキルを身につけませんか？</p>
+            </div>
+
+            <div class="text-center">
+                <p class="text-lg mb-4">現在は新規募集を停止しています</p>
+                <p class="text-base opacity-80">次回募集の情報をいち早くお届けします</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 次回募集お知らせ登録セクション -->
+    <section class="py-12 bg-blue-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">📧 次回募集のお知らせを受け取る</h2>
+            <p class="text-xl mb-8">11月の大型募集に向けて、特別な情報をお届けします</p>
+            
+            <div class="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-blue-600 mb-4">無料メルマガ登録</h3>
+                <div class="space-y-4">
+                    <div class="text-left text-gray-700">
+                        <h4 class="font-bold text-lg mb-2">お届けする内容：</h4>
+                        <ul class="space-y-1 text-sm">
+                            <li>✅ AIコンテンツラボの最新情報</li>
+                            <li>✅ メンバーの成功事例</li>
+                            <li>✅ AI活用の実践的なコツ</li>
+                            <li>✅ 次回募集の優先案内</li>
+                            <li>✅ 限定特典の配布</li>
+                        </ul>
+                    </div>
+                    
+                    <form class="space-y-3">
+                        <input type="text" placeholder="お名前" class="w-full p-3 border rounded-lg text-gray-700">
+                        <input type="email" placeholder="メールアドレス" class="w-full p-3 border rounded-lg text-gray-700">
+                        <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-bold hover:bg-blue-700 cta-pulse">
+                            今すぐ無料で登録する
+                        </button>
+                    </form>
+                    
+                    <p class="text-xs text-gray-500">※迷惑メール対策をお忘れなく</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AIコンテンツラボとは -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">AIコンテンツラボとは？</h2>
+            
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    元保育士のkonが主宰する、AI活用を学ぶオンラインコミュニティです。<br>
+                    「プログラミングなんて無理」と思っていた私でも、今では月5万円の副収入を得られるようになりました。<br>
+                    <strong class="text-blue-600">あなたにも必ずできます。</strong>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-2 border-blue-100">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">🎓</div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">月2回のライブ講座</h3>
+                        <p class="text-gray-600">毎月第2・第4木曜日の20:00〜21:30に開催。リアルタイムで質問でき、実際にツールを作りながら学べます。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-2 border-green-100">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">💬</div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">24時間質問し放題</h3>
+                        <p class="text-gray-600">Discord内で24時間いつでも質問OK。konや先輩メンバーが優しくサポートします。一人で悩む時間はゼロ。</p>
+                    </div>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-lg shadow-lg border-2 border-purple-100">
+                    <div class="text-center">
+                        <div class="text-4xl mb-4">🤝</div>
+                        <h3 class="text-xl font-bold mb-4 text-gray-800">温かいコミュニティ</h3>
+                        <p class="text-gray-600">年齢・職業・経験問わず、みんなで支え合う家族のような関係。成功も失敗も一緒に分かち合います。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 具体的な活動内容 -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">具体的な活動内容</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- 左列 -->
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-blue-600">📚 段階的カリキュラム</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-sm font-bold mr-3">Month 1</span>
+                                <span>AI活用の基礎・マインドセット構築</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-sm font-bold mr-3">Month 2</span>
+                                <span>簡単なツール作成・バイブコーディング実践</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-sm font-bold mr-3">Month 3</span>
+                                <span>収益化の仕組み作り・ポートフォリオ構築</span>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-sm font-bold mr-3">Month 4+</span>
+                                <span>本格的な副業展開・月5万円達成</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-green-600">🎯 個別フィードバック</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✅ 作成したツールへの具体的なアドバイス</li>
+                            <li>✅ 個人の目標に合わせたカスタムプラン</li>
+                            <li>✅ 月1回の個別進捗チェック</li>
+                            <li>✅ つまずきポイントの早期発見・解決</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 右列 -->
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-purple-600">🏆 実践課題とサポート</h3>
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-400 pl-4">
+                                <h4 class="font-bold">週次課題</h4>
+                                <p class="text-sm text-gray-600">学んだことを即実践できる課題を毎週提供</p>
+                            </div>
+                            <div class="border-l-4 border-purple-400 pl-4">
+                                <h4 class="font-bold">成果発表会</h4>
+                                <p class="text-sm text-gray-600">月1回、メンバー同士で作品を共有</p>
+                            </div>
+                            <div class="border-l-4 border-purple-400 pl-4">
+                                <h4 class="font-bold">チャレンジ企画</h4>
+                                <p class="text-sm text-gray-600">楽しみながらスキルアップできる企画を定期開催</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold mb-4 text-orange-600">📈 収益化サポート</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✅ note記事の書き方指導</li>
+                            <li>✅ ココナラでのサービス販売ノウハウ</li>
+                            <li>✅ SNS活用による集客方法</li>
+                            <li>✅ 価格設定や営業のコツ</li>
+                            <li>✅ 継続収入の仕組み作り</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メンバーの実績・活動 -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-4 text-gray-800">メンバーの実績・活動</h2>
+            <p class="text-center text-gray-600 mb-12">実際にメンバーがどんな成果を出しているかご覧ください</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Twitter埋め込み例 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <div class="member-highlight text-white p-4 rounded-lg mb-4 text-center">
+                        <h3 class="font-bold text-lg">メンバーAさんの成果</h3>
+                        <p class="text-sm opacity-90">AIツールで時短達成！</p>
+                    </div>
+                    
+                    <!-- 実際のTwitter埋め込みコードをここに配置 -->
+                    <div class="twitter-embed bg-white p-4 rounded border">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="font-bold">メンバーA</span>
+                                    <span class="text-gray-500 text-sm">@memberA</span>
+                                </div>
+                                <p class="text-gray-800 mb-2">
+                                    AIコンテンツラボで学んだおかげで、毎日の業務を2時間短縮できました！🎉
+                                    作ったツールは家族にも大好評です✨
+                                    #AIコンテンツラボ #バイブコーディング
+                                </p>
+                                <div class="text-gray-500 text-sm">午後 2:30 · 2025年7月8日</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-600">
+                        <a href="#" class="text-blue-600 hover:underline">実際のツイートを見る →</a>
+                    </p>
+                </div>
+
+                <!-- Twitter埋め込み例 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <div class="member-highlight text-white p-4 rounded-lg mb-4 text-center">
+                        <h3 class="font-bold text-lg">メンバーBさんの成果</h3>
+                        <p class="text-sm opacity-90">初収益達成！</p>
+                    </div>
+                    
+                    <div class="twitter-embed bg-white p-4 rounded border">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="font-bold">メンバーB</span>
+                                    <span class="text-gray-500 text-sm">@memberB</span>
+                                </div>
+                                <p class="text-gray-800 mb-2">
+                                    ついに副業で初収益！3,000円だけど、すごく嬉しい😭
+                                    konさんと仲間のサポートがなければできませんでした。
+                                    次は月1万円目指します💪
+                                    #AIコンテンツラボ
+                                </p>
+                                <div class="text-gray-500 text-sm">午後 8:15 · 2025年7月7日</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-600">
+                        <a href="#" class="text-blue-600 hover:underline">実際のツイートを見る →</a>
+                    </p>
+                </div>
+
+                <!-- Twitter埋め込み例 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-lg">
+                    <div class="member-highlight text-white p-4 rounded-lg mb-4 text-center">
+                        <h3 class="font-bold text-lg">メンバーCさんの成果</h3>
+                        <p class="text-sm opacity-90">家族で楽しくAI活用</p>
+                    </div>
+                    
+                    <div class="twitter-embed bg-white p-4 rounded border">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0"></div>
+                            <div class="flex-1">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="font-bold">メンバーC</span>
+                                    <span class="text-gray-500 text-sm">@memberC</span>
+                                </div>
+                                <p class="text-gray-800 mb-2">
+                                    子どもと一緒にAIでクイズアプリ作りました！
+                                    「ママすごい！」って言われて感動🥺
+                                    プログラミングがこんなに楽しいなんて知らなかった
+                                    #AIコンテンツラボ #親子でプログラミング
+                                </p>
+                                <div class="text-gray-500 text-sm">午前 10:45 · 2025年7月6日</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-4 text-sm text-gray-600">
+                        <a href="#" class="text-blue-600 hover:underline">実際のツイートを見る →</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-lg text-gray-600 mb-4">他にもたくさんの成功事例があります</p>
+                <a href="#" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-blue-700 transition">
+                    メンバーの声をもっと見る
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 今週の無料ウェビナー -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">🎪 今週の無料ウェビナー</h2>
+            
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-20 p-8 rounded-xl">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold mb-4">「元保育士でもできた！AI活用で月5万円稼ぐ方法」</h3>
+                    <p class="text-xl opacity-90">無料体験ウェビナー開催中</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4">📅 開催情報</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <span class="w-20 text-sm opacity-80">日時：</span>
+                                <span class="font-bold">毎週土曜 20:00-21:30</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-20 text-sm opacity-80">形式：</span>
+                                <span>オンライン（Zoom）</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-20 text-sm opacity-80">参加費：</span>
+                                <span class="font-bold text-yellow-300">完全無料</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-20 text-sm opacity-80">定員：</span>
+                                <span>30名限定</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4">✨ 学べる内容</h4>
+                        <ul class="space-y-2">
+                            <li>✅ AIを使って30分でツールを作る実演</li>
+                            <li>✅ 副業で月5万円稼ぐ具体的なステップ</li>
+                            <li>✅ 初心者でも失敗しないコツ</li>
+                            <li>✅ AIコンテンツラボの内部紹介</li>
+                            <li>✅ 質疑応答でお悩み解決</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <div class="bg-yellow-400 text-gray-800 px-6 py-3 rounded-lg inline-block mb-6">
+                        <span class="font-bold text-lg">今週の参加特典：AI活用スターターガイド（PDF）プレゼント！</span>
+                    </div>
+                    
+                    <div>
+                        <a href="#" class="inline-block bg-yellow-400 text-gray-800 px-10 py-4 rounded-lg font-bold text-xl hover:bg-yellow-300 transition cta-pulse">
+                            Peatixで今すぐ申し込む
+                        </a>
+                        <p class="text-sm opacity-80 mt-2">※申込み後、Zoomリンクをお送りします</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- konのプロフィール -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">主宰者プロフィール</h2>
+            
+            <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-white font-bold text-4xl">kon</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">kon（コン）</h3>
+                        <p class="text-gray-600">元保育士・AIコンテンツラボ主宰</p>
+                    </div>
+                    
+                    <div class="md:col-span-2">
+                        <h4 class="text-xl font-bold mb-4 text-blue-600">私の変化ストーリー</h4>
+                        <div class="space-y-4 text-gray-700">
+                            <div class="flex">
+                                <span class="bg-red-100 text-red-600 px-3 py-1 rounded text-sm font-bold mr-4 flex-shrink-0">Before</span>
+                                <div>
+                                    <p>保育士として働きながら、将来への不安を抱えていました。「私には特別なスキルがない」と悩む毎日。プログラミングなんて「私には無理」と思い込んでいました。</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <span class="bg-green-100 text-green-600 px-3 py-1 rounded text-sm font-bold mr-4 flex-shrink-0">After</span>
+                                <div>
+                                    <p>AIと出会い、バイブコーディングを始めて人生が激変。今では月5万円の副収入を得ながら、25名のコミュニティを運営しています。家族との時間も増え、毎日がワクワクです。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <h5 class="font-bold mb-2">現在の活動</h5>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AIコンテンツラボ（25名）運営</li>
+                                <li>• note記事執筆（500フォロワー）</li>
+                                <li>• X（Twitter）発信（12,000フォロワー）</li>
+                                <li>• 自治体でのAI活用セミナー講師</li>
+                                <li>• 個人・法人向けコンサルティング</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- メルマガ登録（再訴求） -->
+    <section class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">AI活用で人生を変えませんか？</h2>
+            <p class="text-xl mb-8">次回のAIコンテンツラボ募集は11月を予定しています</p>
+            
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">メルマガ登録で得られる特典</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="text-left text-gray-700">
+                        <h4 class="font-bold text-blue-600 mb-2">📧 7日間無料講座</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• AI活用の基礎知識</li>
+                            <li>• バイブコーディング入門</li>
+                            <li>• 実際のツール作成体験</li>
+                            <li>• 収益化への道筋</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-left text-gray-700">
+                        <h4 class="font-bold text-blue-600 mb-2">🎁 限定特典</h4>
+                        <ul class="text-sm space-y-1">
+                            <li>• AIツール作成テンプレート集</li>
+                            <li>• 成功事例レポート</li>
+                            <li>• 優先申込み権</li>
+                            <li>• 特別価格での案内</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <input type="text" placeholder="お名前" class="w-full p-3 border rounded-lg text-gray-700">
+                    <input type="email" placeholder="メールアドレス" class="w-full p-3 border rounded-lg text-gray-700">
+                    <button type="submit" class="w-full bg-blue-600 text-white p-4 rounded-lg font-bold text-lg hover:bg-blue-700 cta-pulse">
+                        今すぐ無料で特典を受け取る
+                    </button>
+                </form>
+                
+                <p class="text-xs text-gray-500 mt-4">※いつでも配信停止できます</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AIコンテンツラボ</h3>
+                    <p class="text-gray-400">元保育士と一緒に学ぶAI活用コミュニティ</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">リンク</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">X（Twitter）</a></li>
+                        <li><a href="#" class="hover:text-white">note</a></li>
+                        <li><a href="#" class="hover:text-white">Discord</a></li>
+                        <li><a href="#" class="hover:text-white">Peatix</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-4">お問い合わせ</h4>
+                    <p class="text-gray-400">メルマガへの返信でお気軽にご連絡ください</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 AIコンテンツラボ by kon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

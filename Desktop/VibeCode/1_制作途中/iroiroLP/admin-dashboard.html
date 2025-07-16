@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>予約管理ダッシュボード - 金田塾OMET</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .summary-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .summary-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .summary-card .subtitle {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .showtime-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .showtime-section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .showtime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .showtime-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .showtime-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+            transition: width 0.3s ease;
+        }
+
+        .progress-fill.warning {
+            background: linear-gradient(90deg, #ff9800 0%, #ffc107 100%);
+        }
+
+        .progress-fill.danger {
+            background: linear-gradient(90deg, #f44336 0%, #ff5722 100%);
+        }
+
+        .reservation-list {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .reservation-list h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-controls select,
+        .filter-controls input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .filter-controls button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .filter-controls button:hover {
+            background: #5a6fd8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .status-badge.temporary {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-badge.confirmed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-badge.cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        .action-btn {
+            padding: 4px 8px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.85em;
+        }
+
+        .action-btn.confirm {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .action-btn.cancel {
+            background: #f44336;
+            color: white;
+        }
+
+        .refresh-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 16px;
+        }
+
+        .refresh-btn:hover {
+            background: #5a6fd8;
+        }
+
+        @media (max-width: 768px) {
+            .summary-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>予約管理ダッシュボード</h1>
+            <p>金田塾・OMET合同発表会「いろ・いろ・いろいろ語り」</p>
+        </div>
+
+        <div class="summary-cards">
+            <div class="summary-card">
+                <h3>総予約数</h3>
+                <div class="number" id="totalReservations">0</div>
+                <div class="subtitle">件</div>
+            </div>
+            <div class="summary-card">
+                <h3>確定済み</h3>
+                <div class="number" id="confirmedReservations">0</div>
+                <div class="subtitle">件</div>
+            </div>
+            <div class="summary-card">
+                <h3>仮予約</h3>
+                <div class="number" id="temporaryReservations">0</div>
+                <div class="subtitle">件</div>
+            </div>
+            <div class="summary-card">
+                <h3>総売上見込み</h3>
+                <div class="number" id="totalRevenue">¥0</div>
+                <div class="subtitle">円</div>
+            </div>
+        </div>
+
+        <div class="showtime-section">
+            <h2>公演別予約状況</h2>
+            <div class="showtime-grid">
+                <div class="showtime-card">
+                    <h3>8月1日(金) 18:00〜</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-1" style="width: 0%"></div>
+                    </div>
+                    <p><span id="seats-1">0</span> / 100席</p>
+                    <p>売上: ¥<span id="revenue-1">0</span></p>
+                </div>
+                <div class="showtime-card">
+                    <h3>8月2日(土) 13:00〜</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-2" style="width: 0%"></div>
+                    </div>
+                    <p><span id="seats-2">0</span> / 100席</p>
+                    <p>売上: ¥<span id="revenue-2">0</span></p>
+                </div>
+                <div class="showtime-card">
+                    <h3>8月2日(土) 15:30〜</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-3" style="width: 0%"></div>
+                    </div>
+                    <p><span id="seats-3">0</span> / 100席</p>
+                    <p>売上: ¥<span id="revenue-3">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reservation-list">
+            <h2>予約一覧</h2>
+            <div class="filter-controls">
+                <select id="filterShowtime">
+                    <option value="">全ての公演</option>
+                    <option value="8月1日(金) 18:00〜">8月1日(金) 18:00〜</option>
+                    <option value="8月2日(土) 13:00〜">8月2日(土) 13:00〜</option>
+                    <option value="8月2日(土) 15:30〜">8月2日(土) 15:30〜</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="">全てのステータス</option>
+                    <option value="仮予約">仮予約</option>
+                    <option value="予約確定">予約確定</option>
+                    <option value="キャンセル">キャンセル</option>
+                </select>
+                <input type="text" id="searchName" placeholder="名前で検索">
+                <button onclick="exportCSV()">CSVエクスポート</button>
+            </div>
+            
+            <table id="reservationTable">
+                <thead>
+                    <tr>
+                        <th>予約番号</th>
+                        <th>日時</th>
+                        <th>名前</th>
+                        <th>電話番号</th>
+                        <th>公演</th>
+                        <th>チケット内訳</th>
+                        <th>総人数</th>
+                        <th>金額</th>
+                        <th>ステータス</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="reservationTableBody">
+                    <!-- データは動的に追加されます -->
+                </tbody>
+            </table>
+        </div>
+
+        <button class="refresh-btn" onclick="loadData()">🔄 データ更新</button>
+    </div>
+
+    <script>
+        // デモ用のサンプルデータ
+        const sampleData = [
+            {
+                id: 'KO250801-001',
+                timestamp: '2025/01/10 10:30:00',
+                name: '山田太郎',
+                phone: '090-1234-5678',
+                showtime: '8月1日(金) 18:00〜',
+                generalTickets: 2,
+                studentTickets: 1,
+                infantTickets: 0,
+                groupSize: 3,
+                attendees: ['山田花子', '山田次郎'],
+                totalAmount: 5000,
+                status: '予約確定',
+                paymentDate: '2025/01/11'
+            },
+            {
+                id: 'KO250801-002',
+                timestamp: '2025/01/10 14:20:00',
+                name: '鈴木花子',
+                phone: '080-9876-5432',
+                showtime: '8月2日(土) 13:00〜',
+                generalTickets: 4,
+                studentTickets: 0,
+                infantTickets: 1,
+                groupSize: 6,
+                attendees: ['鈴木一郎', '鈴木二郎', '鈴木三郎'],
+                totalAmount: 8500,
+                status: '仮予約',
+                paymentDate: ''
+            },
+            {
+                id: 'KO250801-003',
+                timestamp: '2025/01/09 18:45:00',
+                name: '佐藤次郎',
+                phone: '070-1111-2222',
+                showtime: '8月2日(土) 15:30〜',
+                generalTickets: 1,
+                studentTickets: 2,
+                infantTickets: 1,
+                groupSize: 4,
+                attendees: ['佐藤三郎', '佐藤四郎', '佐藤太郎（3歳）'],
+                totalAmount: 4500,
+                status: '予約確定',
+                paymentDate: '2025/01/10'
+            }
+        ];
+
+        // データ読み込み
+        function loadData() {
+            // 実際の実装では、Google Apps ScriptのAPIから取得
+            updateSummary(sampleData);
+            updateShowtimeStatus(sampleData);
+            updateReservationTable(sampleData);
+        }
+
+        // サマリー更新
+        function updateSummary(data) {
+            const total = data.length;
+            const confirmed = data.filter(r => r.status === '予約確定').length;
+            const temporary = data.filter(r => r.status === '仮予約').length;
+            const revenue = data
+                .filter(r => r.status === '予約確定')
+                .reduce((sum, r) => sum + r.totalAmount, 0);
+
+            document.getElementById('totalReservations').textContent = total;
+            document.getElementById('confirmedReservations').textContent = confirmed;
+            document.getElementById('temporaryReservations').textContent = temporary;
+            document.getElementById('totalRevenue').textContent = `¥${revenue.toLocaleString()}`;
+        }
+
+        // 公演別状況更新
+        function updateShowtimeStatus(data) {
+            const showtimes = {
+                '8月1日(金) 18:00〜': { id: 1, seats: 0, revenue: 0 },
+                '8月2日(土) 13:00〜': { id: 2, seats: 0, revenue: 0 },
+                '8月2日(土) 15:30〜': { id: 3, seats: 0, revenue: 0 }
+            };
+
+            data.forEach(reservation => {
+                if (reservation.status === '予約確定' && showtimes[reservation.showtime]) {
+                    const showtime = showtimes[reservation.showtime];
+                    showtime.seats += reservation.generalTickets + reservation.studentTickets + (reservation.infantTickets || 0);
+                    showtime.revenue += reservation.totalAmount;
+                }
+            });
+
+            Object.entries(showtimes).forEach(([key, value]) => {
+                const percentage = (value.seats / 100) * 100;
+                const progressBar = document.getElementById(`progress-${value.id}`);
+                
+                progressBar.style.width = `${percentage}%`;
+                
+                if (percentage >= 90) {
+                    progressBar.className = 'progress-fill danger';
+                } else if (percentage >= 70) {
+                    progressBar.className = 'progress-fill warning';
+                } else {
+                    progressBar.className = 'progress-fill';
+                }
+
+                document.getElementById(`seats-${value.id}`).textContent = value.seats;
+                document.getElementById(`revenue-${value.id}`).textContent = value.revenue.toLocaleString();
+            });
+        }
+
+        // 予約テーブル更新
+        function updateReservationTable(data) {
+            const tbody = document.getElementById('reservationTableBody');
+            tbody.innerHTML = '';
+
+            data.forEach(reservation => {
+                const row = tbody.insertRow();
+                
+                const ticketBreakdown = [];
+                if (reservation.generalTickets > 0) ticketBreakdown.push(`一般:${reservation.generalTickets}`);
+                if (reservation.studentTickets > 0) ticketBreakdown.push(`学生:${reservation.studentTickets}`);
+                if (reservation.infantTickets > 0) ticketBreakdown.push(`幼児:${reservation.infantTickets}`);
+                
+                const attendeeInfo = reservation.attendees && reservation.attendees.length > 0 
+                    ? `<br><small>同行者: ${reservation.attendees.join('、')}</small>` 
+                    : '';
+                
+                row.innerHTML = `
+                    <td>${reservation.id}</td>
+                    <td>${reservation.timestamp}</td>
+                    <td>${reservation.name}${attendeeInfo}</td>
+                    <td>${reservation.phone}</td>
+                    <td>${reservation.showtime}</td>
+                    <td>${ticketBreakdown.join(' ')}</td>
+                    <td>${reservation.groupSize}名</td>
+                    <td>¥${reservation.totalAmount.toLocaleString()}</td>
+                    <td><span class="status-badge ${getStatusClass(reservation.status)}">${reservation.status}</span></td>
+                    <td>
+                        <div class="action-buttons">
+                            ${reservation.status === '仮予約' ? 
+                                '<button class="action-btn confirm" onclick="confirmReservation(\'' + reservation.id + '\')">確定</button>' : ''}
+                            <button class="action-btn cancel" onclick="cancelReservation('${reservation.id}')">取消</button>
+                        </div>
+                    </td>
+                `;
+            });
+        }
+
+        function getStatusClass(status) {
+            switch(status) {
+                case '仮予約': return 'temporary';
+                case '予約確定': return 'confirmed';
+                case 'キャンセル': return 'cancelled';
+                default: return '';
+            }
+        }
+
+        // 予約確定処理
+        function confirmReservation(id) {
+            if (confirm('この予約を確定しますか？')) {
+                // 実際の実装では、APIを呼び出して更新
+                alert(`予約番号 ${id} を確定しました`);
+                loadData();
+            }
+        }
+
+        // キャンセル処理
+        function cancelReservation(id) {
+            if (confirm('この予約をキャンセルしますか？')) {
+                // 実際の実装では、APIを呼び出して更新
+                alert(`予約番号 ${id} をキャンセルしました`);
+                loadData();
+            }
+        }
+
+        // CSVエクスポート
+        function exportCSV() {
+            // 実際の実装では、現在のフィルター条件に基づいてCSVを生成
+            alert('CSVファイルをダウンロードします');
+        }
+
+        // フィルター処理
+        document.getElementById('filterShowtime').addEventListener('change', filterTable);
+        document.getElementById('filterStatus').addEventListener('change', filterTable);
+        document.getElementById('searchName').addEventListener('input', filterTable);
+
+        function filterTable() {
+            // フィルター実装
+            const showtime = document.getElementById('filterShowtime').value;
+            const status = document.getElementById('filterStatus').value;
+            const name = document.getElementById('searchName').value.toLowerCase();
+            
+            // テーブルの行をフィルタリング
+            const rows = document.querySelectorAll('#reservationTableBody tr');
+            rows.forEach(row => {
+                const cells = row.getElementsByTagName('td');
+                const rowShowtime = cells[4].textContent;
+                const rowStatus = cells[7].textContent.trim();
+                const rowName = cells[2].textContent.toLowerCase();
+                
+                const showtimeMatch = !showtime || rowShowtime === showtime;
+                const statusMatch = !status || rowStatus === status;
+                const nameMatch = !name || rowName.includes(name);
+                
+                row.style.display = showtimeMatch && statusMatch && nameMatch ? '' : 'none';
+            });
+        }
+
+        // 初回データ読み込み
+        window.onload = function() {
+            loadData();
+            // 30秒ごとに自動更新
+            setInterval(loadData, 30000);
+        };
+    </script>
+</body>
+</html>

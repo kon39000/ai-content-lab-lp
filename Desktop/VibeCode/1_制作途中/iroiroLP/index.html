@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【金田塾・OMET合同発表公演】いろ・いろ・いろいろ語り - チケット予約</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ffeb3b 0%, #ff9800 30%, #f44336 60%, #9c27b0 80%, #3f51b5 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 235, 59, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 80% 40%, rgba(255, 152, 0, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(244, 67, 54, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 90% 90%, rgba(156, 39, 176, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 60% 60%, rgba(63, 81, 181, 0.8) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: bold;
+        }
+
+        .header .subtitle {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .header .author {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+        }
+
+        .header .date {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .header .showtimes {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .header .venue {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header .access {
+            font-size: 1em;
+            opacity: 0.85;
+        }
+
+        .seat-status-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .seat-status-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .showtime-status {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .showtime-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .showtime-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .showtime-info {
+            flex: 1;
+        }
+
+        .showtime-date {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .showtime-time {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .seat-availability {
+            text-align: right;
+        }
+
+        .seat-count {
+            font-size: 1.2em;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .seats-plenty {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .seats-few {
+            background: #fff3e0;
+            color: #f57c00;
+            animation: pulse 2s infinite;
+        }
+
+        .seats-soldout {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        .ticket-price-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+        }
+
+        .ticket-price-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .price-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .price-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .price-category {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .price-amount {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .reservation-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .reservation-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .reservation-description {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .reservation-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .reservation-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .reservation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .tel-btn {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .tel-btn:hover {
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-info p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .payment-info {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #ffcc80;
+        }
+
+        .payment-info h4 {
+            color: #f57c00;
+            margin-bottom: 10px;
+        }
+
+        .payment-info ul {
+            list-style: none;
+            padding: 0;
+            color: #666;
+        }
+
+        .payment-info li {
+            padding: 5px 0;
+        }
+
+        .payment-info li:before {
+            content: "✓ ";
+            color: #f57c00;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.3em;
+            }
+            
+            .header .date {
+                font-size: 1.5em;
+            }
+            
+            .reservation-container,
+            .ticket-price-container {
+                padding: 25px;
+            }
+            
+            .showtime-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .seat-availability {
+                text-align: center;
+            }
+            
+            .price-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-item {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>【金田塾・OMET合同発表公演】</h1>
+            <div class="subtitle">〜いろ いろいろ おひろめ語り〜</div>
+            <div class="author">作・指導・演出　金田誠一郎</div>
+            <div class="date">2025年8月1日(金) 2日(土)</div>
+            <div class="showtimes">
+                開演：8月1日(金) ①18:00〜<br>
+                　　　8月2日(土) ②13:00〜<br>
+                　　　　　　　　　③15:30〜<br>
+                ※開場は開演30分前から
+            </div>
+            <div class="venue">としま区民センター 6F 小ホール</div>
+            <div class="access">JR他各線「池袋駅」(東口)より徒歩7分</div>
+        </div>
+
+        <div class="seat-status-container">
+            <h2 class="seat-status-title">🎭 座席予約状況</h2>
+            <div class="showtime-status">
+                <div class="showtime-item">
+                    <div class="showtime-info">
+                        <div class="showtime-date">8月1日(金)</div>
+                        <div class="showtime-time">開演 18:00〜</div>
+                    </div>
+                    <div class="seat-availability">
+                        <span id="seats-1" class="seat-count seats-plenty">お席に余裕があります</span>
+                    </div>
+                </div>
+                <div class="showtime-item">
+                    <div class="showtime-info">
+                        <div class="showtime-date">8月2日(土)</div>
+                        <div class="showtime-time">開演 13:00〜</div>
+                    </div>
+                    <div class="seat-availability">
+                        <span id="seats-2" class="seat-count seats-plenty">お席に余裕があります</span>
+                    </div>
+                </div>
+                <div class="showtime-item">
+                    <div class="showtime-info">
+                        <div class="showtime-date">8月2日(土)</div>
+                        <div class="showtime-time">開演 15:30〜</div>
+                    </div>
+                    <div class="seat-availability">
+                        <span id="seats-3" class="seat-count seats-plenty">お席に余裕があります</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ticket-price-container">
+            <h2 class="ticket-price-title">🎫 チケット料金</h2>
+            <div class="price-list">
+                <div class="price-item">
+                    <div class="price-category">一般</div>
+                    <div class="price-amount">¥2,000</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-category">小中学生</div>
+                    <div class="price-amount">¥1,000</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-category">幼児（座席必要）</div>
+                    <div class="price-amount">¥500</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-category">幼児（座席不要）</div>
+                    <div class="price-amount">無料</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="reservation-container">
+            <h2 class="reservation-title">チケット予約</h2>
+            <div class="reservation-description">
+                <p>チケットのご予約は、下記のGoogleフォームまたはお電話にて承っております。</p>
+                <p>フォームからご予約いただくと、振込先情報をお送りいたします。</p>
+            </div>
+            
+            <div class="reservation-buttons">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1XRFB2BxyEKv_wO1g03MhSjTjmtMbkc5nBT_PJNP9ld7NmQ/viewform?usp=dialog" target="_blank" class="reservation-btn">
+                    📝 Googleフォームで予約する
+                </a>
+                <a href="tel:090-3315-9222" class="reservation-btn tel-btn">
+                    📞 電話で予約する<br>
+                    <small>090-3315-9222</small>
+                </a>
+            </div>
+
+            <div class="payment-info">
+                <h4>💰 お支払いについて</h4>
+                <ul>
+                    <li>銀行振込（事前）</li>
+                    <li>当日現金払い</li>
+                </ul>
+                <p style="margin-top: 10px; font-size: 0.9em;">※振込先は予約確認後にご案内いたします</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>📧 お問い合わせ</h3>
+                <p>ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+                <p style="margin-top: 10px;">
+                    <strong>電話:</strong> 090-3315-9222<br>
+                    <strong>メール:</strong> kanadajuku@gmail.com
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Google Apps Script Web App URL (後で設定)
+        const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        
+        // 座席状況を取得して表示
+        async function updateSeatStatus() {
+            try {
+                let seatData;
+                
+                // Google Apps Script URLが設定されている場合は実際のAPIを使用
+                if (SCRIPT_URL && SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+                    const response = await fetch(SCRIPT_URL);
+                    seatData = await response.json();
+                } else {
+                    // デモ用のデータ（実際の席数に近い値）
+                    seatData = {
+                        '8月1日(金) 18:00〜': { total: 100, reserved: 75, available: 25 },
+                        '8月2日(土) 13:00〜': { total: 100, reserved: 70, available: 30 },
+                        '8月2日(土) 15:30〜': { total: 100, reserved: 65, available: 35 }
+                    };
+                }
+                
+                const showtimes = [
+                    { id: 'seats-1', key: '8月1日(金) 18:00〜' },
+                    { id: 'seats-2', key: '8月2日(土) 13:00〜' },
+                    { id: 'seats-3', key: '8月2日(土) 15:30〜' }
+                ];
+                
+                showtimes.forEach(showtime => {
+                    const element = document.getElementById(showtime.id);
+                    const data = seatData[showtime.key];
+                    
+                    if (!data) {
+                        element.textContent = 'データ取得中...';
+                        element.className = 'seat-count seats-plenty';
+                        return;
+                    }
+                    
+                    const remaining = data.available || (data.total - data.reserved);
+                    
+                    if (remaining <= 0) {
+                        element.textContent = '満席';
+                        element.className = 'seat-count seats-soldout';
+                    } else if (remaining <= 10) {
+                        element.textContent = `残り${remaining}席`;
+                        element.className = 'seat-count seats-few';
+                    } else {
+                        element.textContent = 'お席に余裕があります';
+                        element.className = 'seat-count seats-plenty';
+                    }
+                });
+                
+                console.log('座席状況を更新しました:', seatData);
+                
+            } catch (error) {
+                console.error('座席状況の取得に失敗しました:', error);
+                
+                // エラー時はデフォルト表示
+                const showtimes = ['seats-1', 'seats-2', 'seats-3'];
+                showtimes.forEach(id => {
+                    const element = document.getElementById(id);
+                    element.textContent = 'お席に余裕があります';
+                    element.className = 'seat-count seats-plenty';
+                });
+            }
+        }
+        
+        // ページ読み込み時に座席状況を更新
+        updateSeatStatus();
+        
+        // 定期的に座席状況を更新（5分ごと）
+        setInterval(updateSeatStatus, 5 * 60 * 1000);
+    </script>
+</body>
+</html>

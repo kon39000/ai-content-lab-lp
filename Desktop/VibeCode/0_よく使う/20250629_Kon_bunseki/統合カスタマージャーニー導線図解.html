@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>統合カスタマージャーニー導線図解</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .flow-arrow {
+            position: relative;
+        }
+        .flow-arrow::after {
+            content: '→';
+            font-size: 1.5rem;
+            color: #3B82F6;
+            margin: 0 10px;
+        }
+        .platform-box {
+            transition: all 0.3s ease;
+        }
+        .platform-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .conversion-path {
+            background: linear-gradient(90deg, #EBF8FF 0%, #DBEAFE 50%, #BFDBFE 100%);
+        }
+        .price-tag {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- ヘッダー -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">統合カスタマージャーニー導線図解</h1>
+            <p class="text-xl text-gray-600">各プラットフォームから有料サービスまでの実際の流れ</p>
+            <div class="mt-4 bg-blue-100 p-4 rounded-lg inline-block">
+                <p class="text-blue-800">📊 現在の数値: メルマガ2,080名 | X 12,000名 | Discord 5,100名 | note 500名</p>
+            </div>
+        </div>
+
+        <!-- 認知段階：各プラットフォームからの入り口 -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">🎯 認知段階：各プラットフォームからの入り口</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- X (Twitter) -->
+                <div class="platform-box bg-black text-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold mb-2">🐦 X (Twitter)</h3>
+                        <div class="text-3xl font-bold text-blue-400">12,000名</div>
+                        <p class="text-sm mt-2">最大の認知チャネル</p>
+                    </div>
+                    <div class="mt-4 space-y-2 text-sm">
+                        <div class="bg-gray-800 p-2 rounded">• バイブコーディング実演</div>
+                        <div class="bg-gray-800 p-2 rounded">• 成功事例投稿</div>
+                        <div class="bg-gray-800 p-2 rounded">• 日々の学び共有</div>
+                    </div>
+                </div>
+
+                <!-- Discord -->
+                <div class="platform-box bg-indigo-600 text-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold mb-2">💬 Discord</h3>
+                        <div class="text-3xl font-bold text-yellow-400">5,100名</div>
+                        <p class="text-sm mt-2">コミュニティ基盤</p>
+                    </div>
+                    <div class="mt-4 space-y-2 text-sm">
+                        <div class="bg-indigo-800 p-2 rounded">• リアルタイム交流</div>
+                        <div class="bg-indigo-800 p-2 rounded">• 質問・相談</div>
+                        <div class="bg-indigo-800 p-2 rounded">• 成果発表会</div>
+                    </div>
+                </div>
+
+                <!-- note -->
+                <div class="platform-box bg-green-600 text-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold mb-2">📝 note</h3>
+                        <div class="text-3xl font-bold text-green-300">500名</div>
+                        <p class="text-sm mt-2">質の高いコンテンツ</p>
+                    </div>
+                    <div class="mt-4 space-y-2 text-sm">
+                        <div class="bg-green-800 p-2 rounded">• 詳細ノウハウ記事</div>
+                        <div class="bg-green-800 p-2 rounded">• 成功事例紹介</div>
+                        <div class="bg-green-800 p-2 rounded">• 有料記事</div>
+                    </div>
+                </div>
+
+                <!-- Peatix -->
+                <div class="platform-box bg-orange-600 text-white p-6 rounded-lg shadow-lg">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold mb-2">🎪 Peatix</h3>
+                        <div class="text-3xl font-bold text-orange-300">4,800名</div>
+                        <p class="text-sm mt-2">イベント参加者</p>
+                    </div>
+                    <div class="mt-4 space-y-2 text-sm">
+                        <div class="bg-orange-800 p-2 rounded">• 無料体験講座</div>
+                        <div class="bg-orange-800 p-2 rounded">• AIアートコンテスト</div>
+                        <div class="bg-orange-800 p-2 rounded">• 交流イベント</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 導線の流れ -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">🔄 実際の導線フロー</h2>
+            
+            <!-- パターン1: X → note → メルマガ → 有料サービス -->
+            <div class="conversion-path p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">📱 パターン1: 副業初心者の典型的ジャーニー</h3>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <div class="bg-black text-white px-4 py-2 rounded-lg font-bold">X投稿</div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-green-600 text-white px-4 py-2 rounded-lg font-bold">note無料記事</div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold">メルマガ登録</div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-bold">Discord参加</div>
+                    <div class="flow-arrow"></div>
+                    <div class="price-tag text-white px-4 py-2 rounded-lg font-bold">noteメンバーシップ<br>¥500/月</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="bg-yellow-200 px-3 py-1 rounded-full text-sm">転換率目標: 1-2%</span>
+                </div>
+            </div>
+
+            <!-- パターン2: Discord → AIコンテンツラボ -->
+            <div class="conversion-path p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">💬 パターン2: コミュニティからの直接転換</h3>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <div class="bg-indigo-600 text-white px-4 py-2 rounded-lg font-bold">Discord無料参加</div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-purple-600 text-white px-4 py-2 rounded-lg font-bold">価値体験</div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-pink-600 text-white px-4 py-2 rounded-lg font-bold">個別相談</div>
+                    <div class="flow-arrow"></div>
+                    <div class="price-tag text-white px-4 py-2 rounded-lg font-bold">AIコンテンツラボ<br>¥2,980/月</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="bg-yellow-200 px-3 py-1 rounded-full text-sm">転換率目標: 2%</span>
+                </div>
+            </div>
+
+            <!-- パターン3: note有料記事 → 高額サービス -->
+            <div class="conversion-path p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">📚 パターン3: 質の高いユーザーの短期転換</h3>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <div class="bg-green-600 text-white px-4 py-2 rounded-lg font-bold">note有料記事<br>¥500-1,000</div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-blue-600 text-white px-4 py-2 rounded-lg font-bold">メルマガ登録</div>
+                    <div class="flow-arrow"></div>
+                    <div class="bg-purple-600 text-white px-4 py-2 rounded-lg font-bold">限定オファー</div>
+                    <div class="flow-arrow"></div>
+                    <div class="price-tag text-white px-4 py-2 rounded-lg font-bold">個人コンサル<br>¥50,000/回</div>
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="bg-yellow-200 px-3 py-1 rounded-full text-sm">転換率目標: 5-10%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- サービス階層 -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">💰 サービス階層とアップセル設計</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- エントリー層 -->
+                <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                    <div class="text-center mb-4">
+                        <div class="text-3xl mb-2">🥉</div>
+                        <h3 class="text-xl font-bold text-green-800">エントリー層</h3>
+                        <p class="text-green-600">月額500-1,980円</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded shadow">
+                            <div class="font-bold text-green-800">noteメンバーシップ</div>
+                            <div class="text-sm text-gray-600">月額500円 | 目標50名</div>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow">
+                            <div class="font-bold text-green-800">バイブコーディング実践塾</div>
+                            <div class="text-sm text-gray-600">月額1,980円 | 目標50名</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- コア層 -->
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
+                    <div class="text-center mb-4">
+                        <div class="text-3xl mb-2">🥈</div>
+                        <h3 class="text-xl font-bold text-blue-800">コア層</h3>
+                        <p class="text-blue-600">月額2,980円</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded shadow">
+                            <div class="font-bold text-blue-800">AIコンテンツラボ</div>
+                            <div class="text-sm text-gray-600">現在25名 → 11月目標150名</div>
+                        </div>
+                        <div class="bg-blue-100 p-2 rounded text-sm">
+                            <strong>含まれるもの:</strong><br>
+                            • 月2回ライブ講座<br>
+                            • 個別フィードバック<br>
+                            • Discord専用エリア<br>
+                            • 課題とサポート
+                        </div>
+                    </div>
+                </div>
+
+                <!-- プレミアム層 -->
+                <div class="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-6">
+                    <div class="text-center mb-4">
+                        <div class="text-3xl mb-2">🥇</div>
+                        <h3 class="text-xl font-bold text-yellow-800">プレミアム層</h3>
+                        <p class="text-yellow-600">50,000円〜</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="bg-white p-3 rounded shadow">
+                            <div class="font-bold text-yellow-800">個人コンサル</div>
+                            <div class="text-sm text-gray-600">50,000円/回 | 月4回目標</div>
+                        </div>
+                        <div class="bg-white p-3 rounded shadow">
+                            <div class="font-bold text-yellow-800">法人研修</div>
+                            <div class="text-sm text-gray-600">100,000円〜 | 月1件目標</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 月次目標と転換率 -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">📊 月次転換目標</h2>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 現在の数値 -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">📈 現在の状況（7月）</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                <span>X → note流入</span>
+                                <span class="font-bold">月600名</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                <span>note → メルマガ登録</span>
+                                <span class="font-bold">月90名</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-gray-50 rounded">
+                                <span>メルマガ → 有料サービス</span>
+                                <span class="font-bold">月15名</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-green-100 rounded">
+                                <span class="font-bold">総転換数</span>
+                                <span class="font-bold text-green-600">月25名</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11月目標 -->
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 text-gray-800">🎯 11月目標</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between p-2 bg-blue-50 rounded">
+                                <span>X → note流入</span>
+                                <span class="font-bold">月2,000名</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-blue-50 rounded">
+                                <span>note → メルマガ登録</span>
+                                <span class="font-bold">月300名</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-blue-50 rounded">
+                                <span>メルマガ → 有料サービス</span>
+                                <span class="font-bold">月50名</span>
+                            </div>
+                            <div class="flex justify-between p-2 bg-blue-100 rounded">
+                                <span class="font-bold">総転換数</span>
+                                <span class="font-bold text-blue-600">月100名</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 収益予測 -->
+                <div class="mt-8 p-4 bg-gradient-to-r from-green-100 to-blue-100 rounded-lg">
+                    <h4 class="text-lg font-bold mb-3">💰 11月収益予測</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                        <div class="text-center">
+                            <div class="font-bold text-green-600">エントリー層収益</div>
+                            <div>100名 × 平均1,240円 = 124,000円</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-blue-600">コア層収益</div>
+                            <div>150名 × 2,980円 = 447,000円</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="font-bold text-yellow-600">プレミアム収益</div>
+                            <div>月4件 × 50,000円 = 200,000円</div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 text-xl font-bold text-gray-800">
+                        月間総収益目標: 771,000円
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 実装スケジュール -->
+        <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-800">📅 Phase 1実装スケジュール</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-bold mb-4 text-blue-800">✅ 完了済み</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>メルマガ自動配信シーケンス設計</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>Discord無料エリア整備戦略</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>note記事導線強化戦略</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span>統合カスタマージャーニー設計</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-lg font-bold mb-4 text-orange-600">🔄 次のステップ</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center">
+                            <span class="text-orange-500 mr-2">⏳</span>
+                            <span>メルマガ配信ツール設定</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-orange-500 mr-2">⏳</span>
+                            <span>Discordチャンネル再構築</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-orange-500 mr-2">⏳</span>
+                            <span>note記事投稿スケジュール開始</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-orange-500 mr-2">⏳</span>
+                            <span>各プラットフォーム導線テスト</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- フッター -->
+        <div class="text-center mt-16 p-6 bg-blue-50 rounded-lg">
+            <h3 class="text-xl font-bold text-blue-800 mb-2">🚀 統合戦略の効果</h3>
+            <p class="text-gray-600 mb-4">
+                各プラットフォームが連携することで、単体では達成できない相乗効果を生み出し、<br>
+                11月ローンチ時には月収80万円の安定した事業基盤を構築できます。
+            </p>
+            <div class="text-sm text-gray-500">
+                作成日: 2025年7月8日 | バイブコーディング統合戦略
+            </div>
+        </div>
+    </div>
+</body>
+</html>
